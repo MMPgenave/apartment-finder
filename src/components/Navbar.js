@@ -5,14 +5,11 @@ import { links } from "../utils/constants";
 import { FaBars } from "react-icons/fa";
 import styled from "styled-components";
 import tw from "twin.macro";
-import { Sidebar_Context } from "../context/SidebarContext";
-import { useContext } from "react";
 import { TOGGLE_SIDEBAR } from "../actions";
+import { useSidebarContext } from "../context/SidebarContext";
+
 function Navbar() {
-  const data = useContext(Sidebar_Context);
-  const { state, dispatch } = {
-    ...data,
-  };
+  const { state, dispatch } = useSidebarContext();
   return (
     <StyledNavbar>
       <div className="main">

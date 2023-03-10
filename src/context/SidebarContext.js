@@ -1,7 +1,7 @@
 import React from "react";
-import { useReducer } from "react";
+import { useReducer, useContext } from "react";
 import { Sidebar_reducer } from "../reducers/reducer";
-export const Sidebar_Context = React.createContext();
+const Sidebar_Context = React.createContext();
 const initialState = {
   isSidebarOpen: false,
 };
@@ -12,4 +12,8 @@ export const SidebarContext = ({ children }) => {
       {children}
     </Sidebar_Context.Provider>
   );
+};
+//create my custom Hoke
+export const useSidebarContext = () => {
+  return useContext(Sidebar_Context);
 };
