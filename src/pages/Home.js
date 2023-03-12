@@ -8,7 +8,7 @@ import { Left_Room, Right_Room } from "../actions";
 
 function Home() {
   const { state, dispatch } = useUiContext();
-  console.log(state);
+  
   return (
     <HomeContainer>
       <div
@@ -90,8 +90,8 @@ function Home() {
                 const Length = state.FourRoom.length;
                 dispatch({
                   type: Left_Room,
-                  first: state.FourRoom[Length - 1].id,
-                  last: state.FourRoom[0].id,
+                  last: state.FourRoom[Length - 1].id,
+                  first: state.FourRoom[0].id,
                 });
               }}
             >

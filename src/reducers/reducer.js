@@ -10,8 +10,13 @@ export const Sidebar_reducer = (state, action) => {
 };
 export const uiReducer = (state, action) => {
   if (action.type === Left_Room) {
-    console.log(`Left_Room initiated ,${action.first},${action.last}`);
-    const newRooms = Rooms_List.slice(action.last, action.first + 1);
+    let FirstElement=action.first;
+    let LastElement=action.last;
+    if(LastElement==8){
+      FirstElement=0;
+      LastElement=3;
+    }
+    const newRooms = Rooms_List.slice(FirstElement, LastElement + 1);
     console.log(`newRooms:${newRooms} `);
     return { ...state, FourRoom: newRooms };
   }
