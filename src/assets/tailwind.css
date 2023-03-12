@@ -3,3 +3,10 @@
 @tailwind components;
 
 @tailwind utilities;
+body {
+    font-family: Kalameh,'Times New Roman', Times, serif;
+    position: relative;
+}
+*{
+box-sizing: border-box;
+}

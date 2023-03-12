@@ -30,7 +30,12 @@ function Sidebar() {
           {links.map((link) => {
             const { url, id, text } = link;
             return (
-              <Link to={url} key={id} className="link">
+              <Link
+                to={url}
+                key={id}
+                className="link"
+                onClick={() => dispatch({ type: TOGGLE_SIDEBAR })}
+              >
                 {text}
               </Link>
             );
@@ -43,7 +48,7 @@ function Sidebar() {
 const SidebarContainer = styled.div.attrs({})`
   & {
     .sidebar {
-      ${tw`  fixed top-0 left-0 right-0 lg:hidden  bg-gray-800  `}
+      ${tw` fixed top-0 left-0 right-0 lg:hidden  bg-gray-800  `}
     }
     .show-sidebar {
       ${tw` hidden `}
@@ -55,7 +60,7 @@ const SidebarContainer = styled.div.attrs({})`
       ${tw`w-24 h-24  p-4 border-0 rounded-3xl  mr-10 `}
     }
     .Nav-items {
-      ${tw`  flex flex-col justify-between  bg-gray-800    `}
+      ${tw`h-64  flex flex-col justify-between  bg-gray-800    `}
     }
     .link {
       ${tw`no-underline mr-4 text-slate-500 hover:text-stone-300`}

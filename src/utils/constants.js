@@ -4,8 +4,8 @@ export const links = [
   { id: 1, text: "خانه", url: "/" },
   { id: 2, text: "درباره ما", url: "/about" },
   { id: 3, text: "ویژگی ها", url: "/features" },
-  { id: 4, text: "ارتباط با ما", url: "/features" },
-  { id: 5, text: "سوالات متداول", url: "/features" },
+  { id: 4, text: "ارتباط با ما", url: "/contactUs" },
+  { id: 5, text: "سوالات متداول", url: "/faq" },
 ];
 
 export const MMP_Info = [
