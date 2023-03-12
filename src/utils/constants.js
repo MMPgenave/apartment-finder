@@ -80,7 +80,7 @@ export const Rooms_List = [
     imgUrl:
       "https://www.khaneanzali.com/wp-content/uploads/2021/09/ch_120396_swissalps_chaletlesetrennes_000_webhero_357_ret-1.jpeg",
     price: 1.8,
-    type: " آلونک چوبی یا کلبه ییلاقی ",
+    type: " (دست ساز کیوان) آلونک چوبی    ",
     location: "  دهگلان - روستای علی آباد مشیر",
     description:
       "کلمه «Chalet» یادآور سازه‌هایی سنتی‌ست که در گذشته دامداران گوسفند و بز در سوئیس از آن استفاده می‌کردند. امروزه این نوع کلبه‌ای ییلاقی معمولاً در مناطق کوهستانی واقع شده است. اکنون که اسکی یک ورزش محبوب در سطح جهانی است، چلت‌ها به منزلگاهی مطلوب با دسترسی عالی برای اسکی‌بازان محسوب می‌گردد. برای ساخت چلت‌ها به لحاظ فنی از الگوی خاصی پیروی می‌شود. به طور مثال سقف شیب دار و برجستگی‌های بلند برای جابجایی توده‌های برف از الزامات طراحی این خانه‌هاست",
@@ -99,7 +99,7 @@ export const Rooms_List = [
     id: 7,
     imgUrl:
       "https://www.khaneanzali.com/wp-content/uploads/2021/09/co-op-building-hs.jpeg",
-    price: 2.1,
+    price: 2.3,
     type: " خانه‌ تعاونی ",
     location: "  اندیشه - تهران",
     description:

@@ -10,15 +10,51 @@ export const Sidebar_reducer = (state, action) => {
 };
 export const uiReducer = (state, action) => {
   if (action.type === Left_Room) {
-    let FirstElement=action.first;
-    let LastElement=action.last;
-    if(LastElement==8){
-      FirstElement=0;
-      LastElement=3;
+    let index = action.first;
+
+    const newRooms = [];
+    for (let i = 0; i < 4; i++) {
+      if (index === 8) {
+        index = -1;
+      }
+      if (index === 9) {
+        index = 0;
+      }
+      if (index === 10) {
+        index = 1;
+      }
+      if (index === 11) {
+        index = 2;
+      }
+      newRooms.push(Rooms_List[index + 1]);
+      index++;
     }
-    const newRooms = Rooms_List.slice(FirstElement, LastElement + 1);
+    return { ...state, FourRoom: newRooms };
+  }
+
+  if (action.type === Right_Room) {
+    let index = action.last;
+
+    const newRooms = [];
+    for (let i = 0; i < 4; i++) {
+      if (index === 0) {
+        index = 9;
+      }
+      if (index === -1) {
+        index = 8;
+      }
+      if (index === -2) {
+        index = 7;
+      }
+      if (index === -3) {
+        index = 6;
+      }
+      newRooms.unshift(Rooms_List[index - 1]);
+      index--;
+    }
     console.log(`newRooms:${newRooms} `);
     return { ...state, FourRoom: newRooms };
   }
+
   throw new Error(`this action (${action.type}) did't include in MMP PROGRAMS`);
 };

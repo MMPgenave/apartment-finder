@@ -8,7 +8,7 @@ import { Left_Room, Right_Room } from "../actions";
 
 function Home() {
   const { state, dispatch } = useUiContext();
-  
+
   return (
     <HomeContainer>
       <div
@@ -74,11 +74,9 @@ function Home() {
             <button
               type="button"
               onClick={() => {
-                const Length = state.FourRoom.length;
                 dispatch({
-                  type: Left_Room,
-                  last: state.FourRoom[Length - 1].id,
-                  first: state.FourRoom[0].id,
+                  type: Right_Room,
+                  last: state.FourRoom[state.FourRoom.length-1].id-1,
                 });
               }}
             >
@@ -87,11 +85,9 @@ function Home() {
             <button
               type="button"
               onClick={() => {
-                const Length = state.FourRoom.length;
                 dispatch({
                   type: Left_Room,
-                  last: state.FourRoom[Length - 1].id,
-                  first: state.FourRoom[0].id,
+                  first: state.FourRoom[0].id - 1,
                 });
               }}
             >
