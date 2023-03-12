@@ -4,13 +4,15 @@ import "./assets/styles.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { SidebarContext } from "./context/SidebarContext.js";
-
+import { UiContext } from "./context/UiContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <div className="main">
-    <SidebarContext>
-      <App />
-    </SidebarContext>
+    <UiContext>
+      <SidebarContext>
+        <App />
+      </SidebarContext>
+    </UiContext>
   </div>
 );
 
