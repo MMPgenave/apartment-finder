@@ -61,7 +61,7 @@ const StyledNavbar = styled.main.attrs({
       ${tw`no-underline mr-4 text-slate-500 hover:text-stone-300`}
     }
     button {
-      ${tw`text-gray-300 py-2 px-6 border-0 rounded-3xl text-sm  bg-gray-800 ml-12 hidden  lg:block`}
+      ${tw`text-gray-400 py-2 px-6 border-0 rounded-3xl text-sm  bg-gray-800 ml-12 hidden hover:text-yellow-500 lg:block`}
     }
     .fabars-button {
       ${tw`text-yellow-500 bg-transparent text-xl block  lg:hidden ml-4 hover:text-2xl`}

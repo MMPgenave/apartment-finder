@@ -13,7 +13,7 @@ function Footer() {
             const { id, socialMedia } = item;
             const { url, icon } = socialMedia;
             return (
-              <a href={url} target="_blank" key={id}>
+              <a href={url} rel="noreferrer" target="_blank" key={id}>
                 {icon}
               </a>
             );
@@ -27,7 +27,7 @@ function Footer() {
 const FooterContainer = styled.div.attrs({})`
   & {
     main {
-      ${tw`flex flex-col w-full text-xs bg-gray-800 text-gray-500 items-center p-1`}
+      ${tw`flex flex-col w-full text-xs bg-gray-800 text-gray-500 items-center p-1 h-12`}
     }
     .socials {
       ${tw`flex justify-center items-center bg-gray-800 my-1 text-gray-500`}

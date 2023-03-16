@@ -2,41 +2,41 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { FaAngleDown, FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import { Rooms_List } from "../utils/constants";
+// import { Rooms_List } from "../utils/constants";
 import { useUiContext } from "../context/UiContext";
 import { Left_Room, Right_Room } from "../actions";
-
+import Slider from "../components/Slider";
+import { Link } from "react-router-dom";
 function Home() {
   const { state, dispatch } = useUiContext();
 
   return (
     <HomeContainer>
-      <div
-        className="container"
-        // style={{
-        //   backgroundImage:
-        //     "url('https://cdn.pixabay.com/photo/2016/11/18/17/20/living-room-1835923_960_720.jpg')",
-        // }}
-      >
+      <div className="containerrr">
         <div className="main-content">
           <div className="title">
             <h1>خانه رویایی خودت رو انتخاب کن</h1>
             <div className="btnss">
-              <button type="button">شروع کن</button>
-              <button type="button">مطالعه کن </button>
+              <Link to="/faq" className="btn-link">
+                <button type="button">شروع کن</button>
+              </Link>
+              <Link to="/features" className="btn-link">
+                <button type="button">مطالعه کن </button>
+              </Link>
             </div>
           </div>
-          <img
-            src="https://cdn.pixabay.com/photo/2016/11/18/17/20/living-room-1835923_960_720.jpg"
-            alt="image"
-          />
+          <section className="slider">
+            <Slider />
+          </section>
         </div>
 
         <div className="label">
           <main className="dropdown">
             <button className="dropbtn">
               موقعیت
-              <FaAngleDown />
+              <p>
+                <FaAngleDown />
+              </p>
             </button>
             <main className="dropdown-content">
               <a href="#">تهران</a>
@@ -46,7 +46,9 @@ function Home() {
           <main className="dropdown">
             <button className="dropbtn">
               متراژ
-              <FaAngleDown />
+              <p>
+                <FaAngleDown />
+              </p>
             </button>
             <main className="dropdown-content">
               <a href="#">کمتر از 150 متر</a>
@@ -56,7 +58,9 @@ function Home() {
           <main className="dropdown">
             <button className="dropbtn">
               طبقه بندی شما
-              <FaAngleDown />
+              <p>
+                <FaAngleDown />
+              </p>
             </button>
             <main className="dropdown-content">
               <a href="#">2 خوابه</a>
@@ -76,7 +80,7 @@ function Home() {
               onClick={() => {
                 dispatch({
                   type: Right_Room,
-                  last: state.FourRoom[state.FourRoom.length-1].id-1,
+                  last: state.FourRoom[state.FourRoom.length - 1].id - 1,
                 });
               }}
             >
@@ -115,43 +119,45 @@ function Home() {
 }
 const HomeContainer = styled.main.attrs({})`
   & {
-    .container {
-      //flex justify-center items-baseline
-      ${tw`w-full h-[22rem] mx-auto static    `}
+    .containerrr {
+      //flex justify-center items-baseline mx-auto w-screen static
+      ${tw`w-[97%] h-[22rem] mx-auto static  `}
     }
     .main-content {
+      //w-full
       ${tw`flex flex-col-reverse justify-between items-center sm:flex-row rounded-xl p-4 bg-gray-800 `}
     }
     .title {
-      ${tw`sm:mr-10 sm:mt-1 mt-2 w-1/2 h-1/2 flex flex-col sm:justify-between bg-gray-800  `}
+      //w-1/2 h-1/2
+      ${tw`sm:mr-10 sm:mt-1 mt-2 mb-2  flex flex-col sm:justify-between  bg-gray-800  `}
     }
-    img {
-      ${tw`w-[75%] h-1/2 sm:w-[50%] border-0 rounded-lg sm:h-fit  `}
+    .slider {
+      //h-1/2 max-h-60 max-w-[75%]  h-1/2  sm:w-[50%] sm:h-fit lg:max-w-full lg:h-fit
+      ${tw`  `}
     }
     h1 {
       ${tw`sm:text-[3rem] text-2xl sm:leading-relaxed lg:w-[90%] `}
     }
     .btnss {
-      ${tw`flex justify-between  sm:h-10 w-48 h-8 bg-gray-800 `}
+      ${tw`flex  justify-between mt-2 sm:mr-20 sm:mb-20 sm:h-10 w-36 sm:w-48 h-8 bg-gray-800 `}
     }
-    .btnss > button {
-      ${tw` px-5 py-1 text-sm border rounded-3xl`}
+    .btn-link {
+      ${tw` px-3 py-1 sm:px-5 text-center sm:py-2 sm:text-sm text-xs  rounded-3xl bg-gray-700 bg-opacity-70 text-gray-100 hover:bg-gray-600 hover:text-slate-200`}
     }
-    .btnss > button:first-of-type {
-      ${tw`bg-gray-50 bg-opacity-70 text-gray-800`}
-    }
-    .btnss > button:last-of-type {
-      ${tw`bg-yellow-400 bg-opacity-70 border-none text-gray-700`}
-    }
+
     .label {
-      ${tw`flex flex-row justify-between  w-[67%] h-[6rem] mx-auto  rounded-lg absolute top-[60%] left-[16%] sm:left-[17%] bg-gray-700 bg-opacity-70`}
+      ${tw`flex flex-row justify-between  w-[67%] h-[6rem] mx-auto  rounded-lg absolute top-[45%] left-[16%] sm:left-[17%] bg-gray-700 bg-opacity-70`}
     }
 
     .dropdown {
       ${tw`text-xs overflow-hidden mr-2 mt-2 lg:mr-24 lg:text-lg text-gray-300`}
     }
     .dropbtn {
-      ${tw`flex  items-center justify-between hover:text-yellow-400`}
+      ${tw`flex  items-center justify-between cursor-default`}
+    }
+
+    .dropdown:hover .dropbtn > p {
+      ${tw`rotate-180`}
     }
     .dropdown-content {
       ${tw`hidden absolute z-10`}
@@ -166,7 +172,7 @@ const HomeContainer = styled.main.attrs({})`
       ${tw`bg-yellow-400 opacity-70 text-gray-700 w-12 p-2 rounded-l-lg lg:px-8 lg:text-lg lg:w-auto`}
     }
     .bottom-section {
-      ${tw`w-[85%] h-[6rem] mx-auto mt-12   mb-2 bg-transparent `}
+      ${tw`w-[95%] h-[20rem] mx-auto mt-12 pt-4  mb-12 bg-transparent `}
     }
     .top-sec {
       ${tw`flex justify-between mt-3`}
@@ -175,25 +181,28 @@ const HomeContainer = styled.main.attrs({})`
       ${tw` lg:text-3xl lg:mr-2 `}
     }
     .icons {
-      ${tw`ml-2 flex items-center text-3xl justify-between w-20`}
+      ${tw`ml-2 flex flex-col sm:flex-row items-center text-3xl justify-between sm:w-16`}
+    }
+    .icons > button {
+      ${tw`hover:text-yellow-500  -rotate-90 sm:rotate-0`}
     }
     .icons > p {
       ${tw`bg-gray-500 rounded-lg`}
     }
     .bottom-sec {
-      ${tw`flex justify-between mt-2`}
+      ${tw`flex justify-between flex-row flex-wrap  mt-2 mr-2`}
     }
     .room {
-      ${tw` w-56 h-14 rounded-xl bg-opacity-70`}
+      ${tw` w-64 h-14 text-sm rounded-xl bg-opacity-70  mt-1`}
     }
     .room:first-of-type {
-      ${tw`bg-gray-500  `}
+      ${tw`bg-gray-400  `}
     }
     .room:nth-of-type(2) {
-      ${tw`bg-green-500  `}
+      ${tw`bg-gray-500  `}
     }
     .room:nth-of-type(3) {
-      ${tw`bg-yellow-400  `}
+      ${tw`bg-gray-600  `}
     }
     .room:nth-of-type(4) {
       ${tw`bg-gray-700   `}

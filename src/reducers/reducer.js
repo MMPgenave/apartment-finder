@@ -1,5 +1,5 @@
-import { TOGGLE_SIDEBAR, Left_Room, Right_Room } from "../actions";
-import { Rooms_List } from "../utils/constants";
+import { TOGGLE_SIDEBAR, Left_Room, Right_Room,SLIDE } from "../actions";
+import { Rooms_List ,Images} from "../utils/constants";
 
 export const Sidebar_reducer = (state, action) => {
   if (action.type === TOGGLE_SIDEBAR) {
@@ -54,6 +54,14 @@ export const uiReducer = (state, action) => {
     }
     console.log(`newRooms:${newRooms} `);
     return { ...state, FourRoom: newRooms };
+  }
+  if(action.type===SLIDE){
+    const current=state.Image_Stock;
+    let index=current.id;
+    if (index===4){
+      index=0;
+    }
+    return {...state,Image_Stock:Images[index]}
   }
 
   throw new Error(`this action (${action.type}) did't include in MMP PROGRAMS`);

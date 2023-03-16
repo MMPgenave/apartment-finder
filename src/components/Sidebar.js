@@ -41,6 +41,7 @@ function Sidebar() {
             );
           })}
         </div>
+        {/* <section className="just-full-hight"></section> */}
       </aside>
     </SidebarContainer>
   );
@@ -48,10 +49,11 @@ function Sidebar() {
 const SidebarContainer = styled.div.attrs({})`
   & {
     .sidebar {
-      ${tw` fixed top-0 left-0 right-0 lg:hidden  bg-gray-800  `}
+      ${tw` fixed top-0 right-0 w-[100%] min-h-[calc(100vh-0rem)] transform translate-x-full transition-all lg:hidden  bg-gray-800 -z-[1] `}
     }
     .show-sidebar {
-      ${tw` hidden `}
+      //hidden
+      ${tw` transform translate-x-0 z-[999] `}
     }
     .header {
       ${tw`flex justify-between bg-gray-800  items-center`}
@@ -60,14 +62,17 @@ const SidebarContainer = styled.div.attrs({})`
       ${tw`w-24 h-24  p-4 border-0 rounded-3xl  mr-10 `}
     }
     .Nav-items {
-      ${tw`h-64  flex flex-col justify-between  bg-gray-800    `}
+      ${tw`h-24  flex flex-col justify-between  bg-gray-800 mr-2 mt-4    `}
     }
     .link {
       ${tw`no-underline mr-4 text-slate-500 hover:text-stone-300`}
     }
     button {
-      ${tw`text-xl hover:text-red-600`}
+      ${tw`text-3xl hover:text-yellow-500 ml-6`}
     }
+    /* .just-full-hight{
+      ${tw`h-96 `}
+    } */
   }
 `;
 export default Sidebar;
