@@ -27,10 +27,13 @@ function Footer() {
 const FooterContainer = styled.div.attrs({})`
   & {
     main {
-      ${tw`flex flex-col w-full text-xs bg-gray-800 text-gray-500 items-center p-1 h-12`}
+      ${tw`flex flex-col w-full text-lg bg-gray-800 text-gray-500 items-center p-1 h-20`}
+    }
+    h3{
+      ${tw`ml-8`}
     }
     .socials {
-      ${tw`flex justify-center items-center bg-gray-800 my-1 text-gray-500`}
+      ${tw`flex justify-center items-center text-xl bg-gray-800 my-1 text-gray-500`}
     }
     a {
       ${tw`ml-4 hover:text-gray-300`}

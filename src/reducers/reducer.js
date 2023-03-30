@@ -1,5 +1,14 @@
-import { TOGGLE_SIDEBAR, Left_Room, Right_Room,SLIDE } from "../actions";
-import { Rooms_List ,Images} from "../utils/constants";
+import {
+  TOGGLE_SIDEBAR,
+  Left_Room,
+  Right_Room,
+  SLIDE,
+  NEWLETTER_SUBMISSION,
+  LOADINGFALSE,
+  ADD_PRODUCT,
+  ADD_SINGLE_PRODUCT
+} from "../actions";
+import { Rooms_List, Images } from "../utils/constants";
 
 export const Sidebar_reducer = (state, action) => {
   if (action.type === TOGGLE_SIDEBAR) {
@@ -55,14 +64,29 @@ export const uiReducer = (state, action) => {
     console.log(`newRooms:${newRooms} `);
     return { ...state, FourRoom: newRooms };
   }
-  if(action.type===SLIDE){
-    const current=state.Image_Stock;
-    let index=current.id;
-    if (index===4){
-      index=0;
+  if (action.type === SLIDE) {
+    const current = state.Image_Stock;
+    let index = current.id;
+    if (index === 4) {
+      index = 0;
     }
-    return {...state,Image_Stock:Images[index]}
+    return { ...state, Image_Stock: Images[index] };
   }
-
-  throw new Error(`this action (${action.type}) did't include in MMP PROGRAMS`);
+  // if (action.type === NEWLETTER_SUBMISSION) {
+  //   action.payload.preventDefault();
+  //   alert("clicked");
+  //   return { ...state };
+  // }
+  if (action.type === LOADINGFALSE){
+    return {...state,isLoading:false}
+  }
+  if (action.type===ADD_PRODUCT){
+    return {...state,products:action.payload}
+  }
+  if (action.type===ADD_SINGLE_PRODUCT){
+    return {...state,singleProduct:action.payload}
+  }
+    throw new Error(
+      `this action (${action.type}) did't include in MMP PROGRAMS`
+    );
 };

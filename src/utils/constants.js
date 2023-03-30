@@ -1,11 +1,19 @@
-import { FaInstagram, FaTelegram, FaWhatsapp } from "react-icons/fa";
-
+import {
+  FaInstagram,
+  FaTelegram,
+  FaWhatsapp,
+  FaHome,
+  FaQuestion,
+  FaAlignRight,
+  FaPaperPlane,
+  FaPencilAlt,
+} from "react-icons/fa";
 export const links = [
-  { id: 1, text: "خانه", url: "/" },
-  { id: 2, text: "درباره ما", url: "/about" },
-  { id: 3, text: "ویژگی ها", url: "/features" },
-  { id: 4, text: "ارتباط با ما", url: "/contactUs" },
-  { id: 5, text: "سوالات متداول", url: "/faq" },
+  { id: 1, text: "خانه", url: "/", icon: <FaHome /> },
+  { id: 2, text: "درباره ما", url: "/about", icon: <FaPencilAlt /> },
+  { id: 3, text: "ویژگی ها", url: "/features", icon: <FaAlignRight /> },
+  { id: 4, text: "ارتباط با ما", url: "/contactUs", icon: <FaPaperPlane /> },
+  { id: 5, text: "سوالات متداول", url: "/faq", icon: <FaQuestion /> },
 ];
 
 export const MMP_Info = [
@@ -168,3 +176,6 @@ export const Images = [
       "احتمالا در ایران این واژه یاد‌آور اتاق‌های پیش ساخته کوچکی است که در پروژه‌های عمرانی زیاد به چشم می‌خورد اما وقع قضیه اینطور نیست. کانکس یا کاندو یکی از انواع خانه در میان بسیاری از سازه‌های مسکونی که در یک ساختمان یا مجموعه‌ای از ساختمان‌ها (مجتمع) در قطعه‌ای از زمین واقع شده است",
   },
 ];
+
+
+export const  single_product_url = "https://jovial-klepon-acf62c.netlify.app/api/singleProduct?id=";

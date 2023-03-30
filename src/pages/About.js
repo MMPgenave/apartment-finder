@@ -34,7 +34,7 @@ const AboutContainer = styled.main.attrs({})`
   & {
     .main {
       //sm:h-64 xl:h-80 2xl:h-screen
-      ${tw`min-h-[calc(100vh - 13rem)] justify-center items-center w-[90%] mx-auto lg:flex-row lg:items-start flex flex-col-reverse text-gray-300 `}
+      ${tw`min-h-[calc(100vh - 15rem)] justify-center items-center w-[90%] mx-auto lg:flex-row lg:items-start flex flex-col-reverse text-gray-300 `}
     }
     img {
       ${tw` hover:transition-shadow lg:w-96 lg:h-96 max-w-full h-auto mt-6 mb-4 rounded-sm object-cover lg:rounded-lg`}
@@ -44,6 +44,9 @@ const AboutContainer = styled.main.attrs({})`
       h1 {
         ${tw`text-3xl`}
       }
+    }
+    .right-side>p{
+      ${tw`mt-3 mb-6`}
     }
   }
 `;

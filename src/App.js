@@ -13,32 +13,37 @@ import {
   SingleProduct,
   Products,
 } from "./pages";
-
+import { useUiContext } from "./context/UiContext";
+import Loading from "./components/Loading";
 function App() {
-  return (
-    <MainContainer>
-      <div>     
-      <Router>
-        <Navbar />
-        <Sidebar />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="products" element={<Products />} />
-          <Route path="features" element={<Features />} />
-          <Route path="contactUs" element={<ContactUs />} />
-          <Route path="faq" element={<FAQ />} />
-          <Route path="*" element={<Error />} />
+  const { state, dispatch } = useUiContext();
+  if (state.isLoading) {
+    return <Loading />;
+  } else {
+    return (
+      <MainContainer>
+        <div>
+          <Router>
+            <Navbar />
+            <Sidebar />
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route path="about" element={<About />} />
+              <Route path="products" element={<Products />} />
+              <Route path="features" element={<Features />} />
+              <Route path="contactUs" element={<ContactUs />} />
+              <Route path="faq" element={<FAQ />} />
+              <Route path="*" element={<Error />} />
 
-          <Route path="products/:id" element={<SingleProduct />} />
-        </Routes>
+              <Route path="product/:id" element={<SingleProduct />} />
+            </Routes>
 
-        <Footer />
-      </Router>
-      </div>
-     
-    </MainContainer>
-  );
+            <Footer />
+          </Router>
+        </div>
+      </MainContainer>
+    );
+  }
 }
 export default App;
 const MainContainer = styled.main.attrs({})`

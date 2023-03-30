@@ -18,7 +18,7 @@ function Error() {
 const ErrorConatainer = styled.div.attrs({})`
   & {
     section {
-      ${tw`flex flex-col items-center justify-center min-h-[calc(100vh-8rem)]`}
+      ${tw`flex flex-col items-center justify-center min-h-[calc(100vh - 8rem)]`}
     }
     h1{
       

@@ -18,7 +18,7 @@ function PageHero({ to }) {
 const Wrapper = styled.div.attrs()`
   & {
     section {
-      ${tw`h-20 justify-start text-3xl flex items-center mt-4  bg-gray-700 p-4`}
+      ${tw`h-[5rem] justify-start text-3xl flex items-center mt-4  bg-gray-700 p-4`}
     }
     .homepage {
       ${tw`text-slate-400 mr-16 `}

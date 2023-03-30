@@ -5,7 +5,7 @@ import PageHero from "../components/PageHero";
 function FAQ() {
   return (
     <Wrapper>
-      <PageHero to=" سوالات متداول " />
+      {/* <PageHero to=" سوالات متداول " /> */}
 
       <section> FAQ</section>
     </Wrapper>
@@ -14,7 +14,7 @@ function FAQ() {
 const Wrapper = styled.div.attrs()`
   & {
     section {
-      ${tw`h-[calc(100vh-8rem)] flex justify-center items-center text-3xl`}
+      ${tw`min-h-[calc(100vh - 10rem)] flex justify-center items-center text-3xl`}
     }
   }
 `;

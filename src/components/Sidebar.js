@@ -28,7 +28,7 @@ function Sidebar() {
 
         <div className="Nav-items">
           {links.map((link) => {
-            const { url, id, text } = link;
+            const { url, id, text,icon } = link;
             return (
               <Link
                 to={url}
@@ -36,7 +36,9 @@ function Sidebar() {
                 className="link"
                 onClick={() => dispatch({ type: TOGGLE_SIDEBAR })}
               >
-                {text}
+                <h3>{icon}</h3>
+                <p>{text}</p>
+                
               </Link>
             );
           })}
@@ -65,7 +67,10 @@ const SidebarContainer = styled.div.attrs({})`
       ${tw`h-24  flex flex-col justify-between  bg-gray-800 mr-2 mt-4    `}
     }
     .link {
-      ${tw`no-underline mr-4 text-slate-500 hover:text-stone-300`}
+      ${tw`flex no-underline mr-4 mt-6 text-xl text-slate-500 hover:text-stone-300`}
+    }
+    .link>h3{
+      ${tw`ml-3`}
     }
     button {
       ${tw`text-3xl hover:text-yellow-500 ml-6`}

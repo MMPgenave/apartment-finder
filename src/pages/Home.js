@@ -7,6 +7,7 @@ import { useUiContext } from "../context/UiContext";
 import { Left_Room, Right_Room } from "../actions";
 import Slider from "../components/Slider";
 import { Link } from "react-router-dom";
+import NewsLetter from "../components/NewsLetter";
 function Home() {
   const { state, dispatch } = useUiContext();
 
@@ -17,12 +18,16 @@ function Home() {
           <div className="title">
             <h1>خانه رویایی خودت رو انتخاب کن</h1>
             <div className="btnss">
-              <Link to="/faq" className="btn-link">
+              <Link to="/products" className="btn-link">
                 <button type="button">شروع کن</button>
               </Link>
-              <Link to="/features" className="btn-link">
+              <a
+                href="https://kilid.com/mag/buy-and-rent-advice/buying-and-selling-home/4205/"
+                target="_blank"
+                className="btn-link"
+              >
                 <button type="button">مطالعه کن </button>
-              </Link>
+              </a>
             </div>
           </div>
           <section className="slider">
@@ -103,17 +108,18 @@ function Home() {
           {state.FourRoom.map((room) => {
             const { id, price, location, type } = room;
             return (
-              <section key={id} className="room">
+              <Link to={`/product/${id}`} key={id} className="room">
                 <h3>{type}</h3>
                 <section className="room-details">
                   <p>{location}</p>
                   <h5>{price} ملیارد تومان</h5>
                 </section>
-              </section>
+              </Link>
             );
           })}
         </section>
       </div>
+      <NewsLetter />
     </HomeContainer>
   );
 }
@@ -121,32 +127,32 @@ const HomeContainer = styled.main.attrs({})`
   & {
     .containerrr {
       //flex justify-center items-baseline mx-auto w-screen static
-      ${tw`w-[97%] h-[22rem] mx-auto static  `}
+      ${tw`w-[97%] h-[30rem] mx-auto relative  `}
     }
     .main-content {
-      //w-full
-      ${tw`flex flex-col-reverse justify-between items-center sm:flex-row rounded-xl p-4 bg-gray-800 `}
+      //w-full sm:p-4
+      ${tw`flex flex-col-reverse justify-between items-center md:flex-row rounded-xl  bg-gray-800 `}
     }
     .title {
-      //w-1/2 h-1/2
-      ${tw`sm:mr-10 sm:mt-1 mt-2 mb-2  flex flex-col sm:justify-between  bg-gray-800  `}
+      //w-1/2 h-1/2 flex flex-col
+      ${tw`md:pr-10 md:mt-1 mt-6 mb-2 mr-6  md:pt-10  md:w-2/4 md:justify-between  bg-gray-800  `}
     }
     .slider {
       //h-1/2 max-h-60 max-w-[75%]  h-1/2  sm:w-[50%] sm:h-fit lg:max-w-full lg:h-fit
-      ${tw`  `}
+      ${tw` h-full md:w-3/4 w-full overflow-hidden`}
     }
     h1 {
-      ${tw`sm:text-[3rem] text-2xl sm:leading-relaxed lg:w-[90%] `}
+      ${tw`md:text-[3rem] text-slate-400 mb-6 text-3xl md:leading-relaxed md:w-[90%] `}
     }
     .btnss {
-      ${tw`flex  justify-between mt-2 sm:mr-20 sm:mb-20 sm:h-10 w-36 sm:w-48 h-8 bg-gray-800 `}
+      ${tw` flex justify-start mt-2 md:mr-20 md:ml-16 md:mb-20 md:h-10 w-4/5 md:w-64 h-8 bg-gray-800 `}
     }
     .btn-link {
-      ${tw` px-3 py-1 sm:px-5 text-center sm:py-2 sm:text-sm text-xs  rounded-3xl bg-gray-700 bg-opacity-70 text-gray-100 hover:bg-gray-600 hover:text-slate-200`}
+      ${tw` px-4 py-2 mr-4 w-36 md:w-48 md:px-5 text-center md:py-2 text-sm  rounded-3xl bg-gray-700 bg-opacity-70 text-gray-100 hover:bg-gray-600 hover:text-slate-200`}
     }
 
     .label {
-      ${tw`flex flex-row justify-between  w-[67%] h-[6rem] mx-auto  rounded-lg absolute top-[45%] left-[16%] sm:left-[17%] bg-gray-700 bg-opacity-70`}
+      ${tw`flex flex-row justify-between w-[89%] h-[6rem] mx-auto  rounded-lg absolute top-[94%] left-[6%]  bg-gray-700 bg-opacity-70`}
     }
 
     .dropdown {
@@ -169,16 +175,16 @@ const HomeContainer = styled.main.attrs({})`
       ${tw`block flex-none hover:text-yellow-500  [text-decoration: none] [text-align: right] lg:text-sm`}
     }
     .reserve-btn {
-      ${tw`bg-yellow-400 opacity-70 text-gray-700 w-12 p-2 rounded-l-lg lg:px-8 lg:text-lg lg:w-auto`}
+      ${tw`bg-yellow-500 opacity-70 text-slate-50 hover:bg-slate-100 hover:text-yellow-500  p-2 rounded-l-lg lg:px-8 lg:text-lg w-auto`}
     }
     .bottom-section {
-      ${tw`w-[95%] h-[20rem] mx-auto mt-12 pt-4  mb-12 bg-transparent `}
+      ${tw`w-[95%] h-[28rem] mx-auto mt-24 pt-4  mb-12 bg-transparent `}
     }
     .top-sec {
-      ${tw`flex justify-between mt-3`}
+      ${tw`flex justify-between mt-3 mb-2`}
     }
     .top-sec > h2 {
-      ${tw` lg:text-3xl lg:mr-2 `}
+      ${tw` text-slate-400 text-3xl lg:mr-2 tracking-wider `}
     }
     .icons {
       ${tw`ml-2 flex flex-col sm:flex-row items-center text-3xl justify-between sm:w-16`}
@@ -193,7 +199,7 @@ const HomeContainer = styled.main.attrs({})`
       ${tw`flex justify-between flex-row flex-wrap  mt-2 mr-2`}
     }
     .room {
-      ${tw` w-64 h-14 text-sm rounded-xl bg-opacity-70  mt-1`}
+      ${tw` w-80 h-20 text-lg rounded-xl bg-opacity-70  mt-2`}
     }
     .room:first-of-type {
       ${tw`bg-gray-400  `}
