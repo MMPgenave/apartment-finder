@@ -46,19 +46,19 @@ const Wrapper = styled.div.attrs()`
   & {
     section {
       //
-      ${tw` flex w-[98%] mx-auto flex-wrap  items-center rounded-b-lg py-2 mb-6 bg-gray-200`}
+      ${tw` flex md:justify-between w-[98%] mx-auto flex-wrap  items-center rounded-b-lg py-2 mb-6 bg-gray-200`}
     }
     section > div {
-      ${tw`bg-gray-200 w-[50%] mr-4`}
+      ${tw`bg-gray-200 md:w-[50%] mr-4`}
     }
     h2 {
-      ${tw`text-gray-800 w-64 md:w-4/5  text-2xl px-2 mb-2 `}
+      ${tw`text-gray-800  md:w-4/5  text-2xl px-2 mb-2 `}
     }
     p {
       ${tw`text-justify px-2 text-sm mb-2 text-gray-700`}
     }
     form {
-      ${tw` mr-3`}
+      ${tw` mx-auto md:ml-4 mt-6`}
     }
     input {
       ${tw`rounded-r-xl border-0 bg-gray-300 text-gray-800`}

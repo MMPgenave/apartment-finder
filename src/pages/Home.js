@@ -145,10 +145,10 @@ const HomeContainer = styled.main.attrs({})`
       ${tw`md:text-[3rem] text-slate-400 mb-6 text-3xl md:leading-relaxed md:w-[90%] `}
     }
     .btnss {
-      ${tw` flex justify-start mt-2 md:mr-20 md:ml-16 md:mb-20 md:h-10 w-4/5 md:w-64 h-8 bg-gray-800 `}
+      ${tw` flex justify-start mt-24 md:mr-20 md:ml-16 md:mb-20 md:h-10 w-[90%] md:w-96 h-8 bg-gray-800 `}
     }
     .btn-link {
-      ${tw` px-4 py-2 mr-4 w-36 md:w-48 md:px-5 text-center md:py-2 text-sm  rounded-3xl bg-gray-700 bg-opacity-70 text-gray-100 hover:bg-gray-600 hover:text-slate-200`}
+      ${tw` px-4 py-2 pb-3 mr-6 w-36 md:w-48 md:px-5 text-center md:py-2 text-sm  rounded-lg bg-gray-700 bg-opacity-70 text-gray-100 hover:bg-gray-600 hover:text-slate-200`}
     }
 
     .label {

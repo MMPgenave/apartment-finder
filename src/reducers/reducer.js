@@ -5,8 +5,13 @@ import {
   SLIDE,
   NEWLETTER_SUBMISSION,
   LOADINGFALSE,
+  LOADINGTRUE,
   ADD_PRODUCT,
-  ADD_SINGLE_PRODUCT
+  ADD_SINGLE_PRODUCT,
+  SINGLE_PRODUCT_LOADING_FALSE,
+  SINGLE_PRODUCT_LOADING_TRUE,
+  HAVE_ERROR_ON_SINGLE_PRODUCT_LOADING,
+  HAVE_NOT_ERROR_ON_SINGLE_PRODUCT_LOADING,
 } from "../actions";
 import { Rooms_List, Images } from "../utils/constants";
 
@@ -77,16 +82,29 @@ export const uiReducer = (state, action) => {
   //   alert("clicked");
   //   return { ...state };
   // }
-  if (action.type === LOADINGFALSE){
-    return {...state,isLoading:false}
+  if (action.type === LOADINGFALSE) {
+    return { ...state, isLoading: false };
   }
-  if (action.type===ADD_PRODUCT){
-    return {...state,products:action.payload}
+  if (action.type === LOADINGTRUE) {
+    return { ...state, isLoading: true };
   }
-  if (action.type===ADD_SINGLE_PRODUCT){
-    return {...state,singleProduct:action.payload}
+  if (action.type === ADD_PRODUCT) {
+    return { ...state, products: action.payload };
   }
-    throw new Error(
-      `this action (${action.type}) did't include in MMP PROGRAMS`
-    );
+  if (action.type === SINGLE_PRODUCT_LOADING_FALSE) {
+    return { ...state, singleProductLoading: false };
+  }
+  if (action.type === SINGLE_PRODUCT_LOADING_TRUE) {
+    return { ...state, singleProductLoading: true };
+  }
+  if (action.type === ADD_SINGLE_PRODUCT) {
+    return { ...state, singleProduct: action.payload };
+  }
+  if (action.type === HAVE_ERROR_ON_SINGLE_PRODUCT_LOADING) {
+    return { ...state, isErrorOnSingleProductLoading: true };
+  }
+  if (action.type === HAVE_NOT_ERROR_ON_SINGLE_PRODUCT_LOADING) {
+    return { ...state, isErrorOnSingleProductLoading: false };
+  }
+  throw new Error(`this action (${action.type}) did't include in MMP PROGRAMS`);
 };

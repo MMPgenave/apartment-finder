@@ -9,7 +9,7 @@ import {
   FaPencilAlt,
 } from "react-icons/fa";
 export const links = [
-  { id: 1, text: "خانه", url: "/", icon: <FaHome /> },
+  { id: 1, text: "صفحه اصلی", url: "/", icon: <FaHome /> },
   { id: 2, text: "درباره ما", url: "/about", icon: <FaPencilAlt /> },
   { id: 3, text: "ویژگی ها", url: "/features", icon: <FaAlignRight /> },
   { id: 4, text: "ارتباط با ما", url: "/contactUs", icon: <FaPaperPlane /> },

@@ -2,7 +2,16 @@ import React, { useContext, useReducer, useEffect } from "react";
 import { Rooms_List, Images } from "../utils/constants";
 import { uiReducer } from "../reducers/reducer";
 import axios from "axios";
-import { LOADINGFALSE, ADD_PRODUCT,ADD_SINGLE_PRODUCT } from "../actions";
+import {
+  LOADINGFALSE,
+  LOADINGTRUE,
+  ADD_PRODUCT,
+  ADD_SINGLE_PRODUCT,
+  SINGLE_PRODUCT_LOADING_TRUE,
+  SINGLE_PRODUCT_LOADING_FALSE,
+  HAVE_ERROR_ON_SINGLE_PRODUCT_LOADING,
+  HAVE_NOT_ERROR_ON_SINGLE_PRODUCT_LOADING,
+} from "../actions";
 const url = "https://jovial-klepon-acf62c.netlify.app/api/2-basic-api";
 const ui_context = React.createContext();
 const initial_state = {
@@ -10,7 +19,9 @@ const initial_state = {
   FourRoom: Rooms_List.slice(0, 4),
   Image_Stock: Images[0], //Image_Stock used for Slider component
   products: [],
-  singleProduct:{},
+  singleProductLoading: false,
+  singleProduct: {},
+  isErrorOnSingleProductLoading: false,
 };
 export const UiContext = ({ children }) => {
   // get the data from url
@@ -27,11 +38,16 @@ export const UiContext = ({ children }) => {
   //Fetch single product
   async function getSingleProduct(url) {
     try {
-      const response= await axios.get(url);
-      const singleProduct= response.data;
-      dispatch({type:ADD_SINGLE_PRODUCT,payload:singleProduct})
+      dispatch({ type: SINGLE_PRODUCT_LOADING_TRUE });
+      // dispatch({ type: HAVE_NOT_ERROR_ON_SINGLE_PRODUCT_LOADING });
+
+      const response = await axios.get(url);
+      const singleProduct = response.data;
+      dispatch({ type: ADD_SINGLE_PRODUCT, payload: singleProduct });
+      dispatch({ type: SINGLE_PRODUCT_LOADING_FALSE });
     } catch (error) {
-      
+      dispatch({ type: SINGLE_PRODUCT_LOADING_FALSE });
+      dispatch({ type: HAVE_ERROR_ON_SINGLE_PRODUCT_LOADING });
     }
   }
   useEffect(() => {
@@ -39,7 +55,7 @@ export const UiContext = ({ children }) => {
   }, []);
   const [state, dispatch] = useReducer(uiReducer, initial_state);
   return (
-    <ui_context.Provider value={{ state, dispatch,getSingleProduct }}>
+    <ui_context.Provider value={{ state, dispatch, getSingleProduct }}>
       {children}
     </ui_context.Provider>
   );
