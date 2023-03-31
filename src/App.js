@@ -15,8 +15,12 @@ import {
 } from "./pages";
 import { useUiContext } from "./context/UiContext";
 import Loading from "./components/Loading";
+import ErrorOnLoadingTotalProducts from "./components/ErrorOnLoadingTotalProducts";
 function App() {
   const { state, dispatch } = useUiContext();
+  if (state.isErrorOnTotalProductsLoading) {
+    return <ErrorOnLoadingTotalProducts></ErrorOnLoadingTotalProducts>;
+  }
   if (state.isLoading) {
     return <Loading />;
   } else {

@@ -8,6 +8,8 @@ import {
   FaPaperPlane,
   FaPencilAlt,
 } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
+import { IoMdCall } from "react-icons/io";
 export const links = [
   { id: 1, text: "صفحه اصلی", url: "/", icon: <FaHome /> },
   { id: 2, text: "درباره ما", url: "/about", icon: <FaPencilAlt /> },
@@ -39,6 +41,22 @@ export const MMP_Info = [
       name: "WHATSAPP",
       url: "https://api.whatsapp.com/send?phone=+989187891922",
       icon: <FaWhatsapp />,
+    },
+  },
+  {
+    id: 4,
+    socialMedia: {
+      name: "EMAIL",
+      url: "mailto: mohammadmp14@gmail.com",
+      icon: <SiGmail />,
+    },
+  },
+  {
+    id: 5,
+    socialMedia: {
+      name: "PHONECALL",
+      url: "tel:+98-918-789-1922",
+      icon: <IoMdCall />,
     },
   },
 ];
@@ -177,5 +195,5 @@ export const Images = [
   },
 ];
 
-
-export const  single_product_url = "https://jovial-klepon-acf62c.netlify.app/api/singleProduct?id=";
+export const single_product_url =
+  "https://jovial-klepon-acf62c.netlify.app/api/singleProduct?id=";

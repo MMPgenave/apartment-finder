@@ -12,6 +12,8 @@ import {
   SINGLE_PRODUCT_LOADING_TRUE,
   HAVE_ERROR_ON_SINGLE_PRODUCT_LOADING,
   HAVE_NOT_ERROR_ON_SINGLE_PRODUCT_LOADING,
+  HAVE_ERROR_ON_TOTAL_PRODUCTS_LOADING,
+  HAVE_NOT_ERROR_ON_TOTAL_PRODUCTS_LOADING,
 } from "../actions";
 import { Rooms_List, Images } from "../utils/constants";
 
@@ -90,6 +92,12 @@ export const uiReducer = (state, action) => {
   }
   if (action.type === ADD_PRODUCT) {
     return { ...state, products: action.payload };
+  }
+  if (action.type === HAVE_ERROR_ON_TOTAL_PRODUCTS_LOADING) {
+    return { ...state, isErrorOnTotalProductsLoading: true };
+  }
+  if (action.type === HAVE_NOT_ERROR_ON_TOTAL_PRODUCTS_LOADING) {
+    return { ...state, isErrorOnTotalProductsLoading: false };
   }
   if (action.type === SINGLE_PRODUCT_LOADING_FALSE) {
     return { ...state, singleProductLoading: false };
