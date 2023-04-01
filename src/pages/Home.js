@@ -70,6 +70,8 @@ function Home() {
             <main className="dropdown-content">
               <a href="#">2 خوابه</a>
               <a href="#">سویت</a>
+              <input type="checkbox"></input>
+              <input type="checkbox"></input>
             </main>
           </main>
 
@@ -127,7 +129,7 @@ const HomeContainer = styled.main.attrs({})`
   & {
     .containerrr {
       //flex justify-center items-baseline mx-auto w-screen static
-      ${tw`w-[97%] h-[30rem] mx-auto relative  `}
+      ${tw`w-[97%] md:h-[23rem] h-[30rem]  mx-auto relative  `}
     }
     .main-content {
       //w-full sm:p-4
@@ -142,15 +144,20 @@ const HomeContainer = styled.main.attrs({})`
       ${tw` h-full md:w-3/4 w-full overflow-hidden`}
     }
     h1 {
-      ${tw`md:text-[3rem] text-slate-400 mb-6 text-3xl md:leading-relaxed md:w-[90%] `}
+      ${tw`md:text-[3rem] text-gray-400 mb-6 text-3xl md:leading-relaxed md:w-[90%] `}
     }
     .btnss {
-      ${tw` flex justify-start mt-24 md:mr-20 md:ml-16 md:mb-20 md:h-10 w-[90%] md:w-96 h-8 bg-gray-800 `}
+      ${tw` flex justify-start mt-16 md:mr-20 md:ml-16 md:mb-20 md:h-10 w-[90%] md:w-96 h-8 bg-gray-800 `}
     }
     .btn-link {
-      ${tw` px-4 py-2 pb-3 mr-6 w-36 md:w-48 md:px-5 text-center md:py-2 text-sm  rounded-lg bg-gray-700 bg-opacity-70 text-gray-100 hover:bg-gray-600 hover:text-slate-200`}
+      ${tw` px-4 py-2 pb-3 mr-6 w-36 md:w-48 md:px-5 text-center md:py-2 text-sm  rounded-lg bg-opacity-70  `}
     }
-
+    .btn-link:nth-of-type(1) {
+      ${tw`bg-orangemmp hover:bg-gray-200 hover:text-orangemmp`}
+    }
+    .btn-link:nth-of-type(2) {
+      ${tw`bg-gray-200 text-gray-900 hover:bg-gray-700 hover:text-gray-200`}
+    }
     .label {
       ${tw`flex flex-row justify-between w-[89%] h-[6rem] mx-auto  rounded-lg absolute top-[94%] left-[6%]  bg-gray-700 bg-opacity-70`}
     }
@@ -172,10 +179,10 @@ const HomeContainer = styled.main.attrs({})`
       ${tw` flex flex-col justify-center`}
     }
     .dropdown-content a {
-      ${tw`block flex-none hover:text-yellow-500  [text-decoration: none] [text-align: right] lg:text-sm`}
+      ${tw`block flex-none hover:text-yellowmmp [text-decoration: none] [text-align: right] lg:text-sm`}
     }
     .reserve-btn {
-      ${tw`bg-yellow-500 opacity-70 text-slate-50 hover:bg-slate-100 hover:text-yellow-500  p-2 rounded-l-lg lg:px-8 lg:text-lg w-auto`}
+      ${tw`bg-orangemmp opacity-70 text-gray-50 hover:bg-gray-100 hover:text-yellowmmp  p-2 rounded-l-lg lg:px-8 lg:text-lg w-auto`}
     }
     .bottom-section {
       ${tw`w-[95%] h-[28rem] mx-auto mt-24 pt-4  mb-12 bg-transparent `}
@@ -184,13 +191,13 @@ const HomeContainer = styled.main.attrs({})`
       ${tw`flex justify-between mt-3 mb-2`}
     }
     .top-sec > h2 {
-      ${tw` text-slate-400 text-3xl lg:mr-2 tracking-wider `}
+      ${tw` text-gray-400 text-3xl lg:mr-2 tracking-wider `}
     }
     .icons {
       ${tw`ml-2 flex flex-col sm:flex-row items-center text-3xl justify-between sm:w-16`}
     }
     .icons > button {
-      ${tw`hover:text-yellow-500  -rotate-90 sm:rotate-0`}
+      ${tw`hover:text-yellowmmp  -rotate-90 sm:rotate-0`}
     }
     .icons > p {
       ${tw`bg-gray-500 rounded-lg`}
@@ -205,10 +212,10 @@ const HomeContainer = styled.main.attrs({})`
       ${tw`bg-gray-400  `}
     }
     .room:nth-of-type(2) {
-      ${tw`bg-gray-500  `}
+      ${tw`bg-orangemmp  `}
     }
     .room:nth-of-type(3) {
-      ${tw`bg-gray-600  `}
+      ${tw`bg-limemmp  `}
     }
     .room:nth-of-type(4) {
       ${tw`bg-gray-700   `}
@@ -220,10 +227,10 @@ const HomeContainer = styled.main.attrs({})`
       ${tw`mt-1 mr-3 text-gray-300 `}
     }
     .room-details > h5 {
-      ${tw`bg-gray-800 border-none rounded-sm py-1 px-2 text-xs`}
+      ${tw`bg-gray-800 border-none rounded-lg py-1 px-2 text-lg`}
     }
     .room-details > p {
-      ${tw`  text-gray-200 text-xs`}
+      ${tw`  text-gray-200 text-lg`}
     }
   }
 `;

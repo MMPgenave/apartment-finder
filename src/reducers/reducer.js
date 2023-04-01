@@ -14,6 +14,8 @@ import {
   HAVE_NOT_ERROR_ON_SINGLE_PRODUCT_LOADING,
   HAVE_ERROR_ON_TOTAL_PRODUCTS_LOADING,
   HAVE_NOT_ERROR_ON_TOTAL_PRODUCTS_LOADING,
+  SEARCH_PRODUCT,
+  REFRESH_PRODUCTS
 } from "../actions";
 import { Rooms_List, Images } from "../utils/constants";
 
@@ -91,7 +93,7 @@ export const uiReducer = (state, action) => {
     return { ...state, isLoading: true };
   }
   if (action.type === ADD_PRODUCT) {
-    return { ...state, products: action.payload };
+    return { ...state, products: action.payload, productsCopy: action.payload };
   }
   if (action.type === HAVE_ERROR_ON_TOTAL_PRODUCTS_LOADING) {
     return { ...state, isErrorOnTotalProductsLoading: true };
@@ -113,6 +115,18 @@ export const uiReducer = (state, action) => {
   }
   if (action.type === HAVE_NOT_ERROR_ON_SINGLE_PRODUCT_LOADING) {
     return { ...state, isErrorOnSingleProductLoading: false };
+  }
+  if (action.type === SEARCH_PRODUCT) {
+    const newProducts = state.productsCopy.filter(
+      (item) =>
+        item.type.includes(action.payload) ||
+        item.location.includes(action.payload)||item.description.includes(action.payload)
+
+    );
+    return { ...state, products: newProducts };
+  }
+  if (action.type===REFRESH_PRODUCTS){
+    return{...state,products:state.productsCopy}
   }
   throw new Error(`this action (${action.type}) did't include in MMP PROGRAMS`);
 };

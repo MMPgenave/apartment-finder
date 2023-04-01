@@ -166,7 +166,7 @@ export const Images = [
   {
     id: 2,
     imgUrl:
-      "https://www.khaneanzali.com/wp-content/uploads/2021/09/59ef7af006f6677cce96cfd096f335e2.jpeg",
+    "https://www.khaneanzali.com/wp-content/uploads/2021/09/co-op-building-hs.jpeg",
     price: 5.2,
     type: " ویلایی",
     location: "رشت",

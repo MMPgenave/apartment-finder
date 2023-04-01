@@ -53,7 +53,7 @@ export default App;
 const MainContainer = styled.main.attrs({})`
   & {
     div {
-      ${tw`bg-gray-900 h-full text-slate-50 `}
+      ${tw`bg-gray-900 h-full text-gray-50 `}
     }
   }
 `;

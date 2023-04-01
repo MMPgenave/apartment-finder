@@ -21,6 +21,7 @@ const initial_state = {
   FourRoom: Rooms_List.slice(0, 4),
   Image_Stock: Images[0], //Image_Stock used for Slider component
   products: [],
+  productsCopy: [],
   isErrorOnTotalProductsLoading: false,
   singleProductLoading: false,
   singleProduct: {},

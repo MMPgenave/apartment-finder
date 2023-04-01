@@ -29,7 +29,7 @@ const ErrorConatainer = styled.div.attrs({})`
       ${tw`text-2xl `}
     }
   .button{
-  ${tw`bg-yellow-500 mt-4 rounded-lg py-1 px-2 hover:bg-slate-200 hover:text-yellow-500`}
+  ${tw`bg-yellow-500 mt-4 rounded-lg py-1 px-2 hover:bg-gray-200 hover:text-yellow-500`}
 }
   }
 `;

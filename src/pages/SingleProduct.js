@@ -49,7 +49,7 @@ function SingleProduct() {
             <h1>{type}</h1>
             <div className="locationandprice">
               <div className="location">
-                <CiLocationOn />
+                <p><CiLocationOn /></p>
                 <h3>{location}</h3>
               </div>
               <p>قیمت :{price} ملیارد تومان</p>
@@ -71,19 +71,22 @@ const Wrapper = styled.div.attrs({})`
       ${tw`rounded-b-lg mb-6 md:w-[35rem] md:h-96 object-cover md:rounded-xl`}
     }
     h1 {
-      ${tw`text-2xl text-slate-100 mb-6 md:text-[3rem]`}
+      ${tw`text-2xl text-gray-100 mb-6 md:text-[3rem]`}
     }
     .locationandprice {
-      ${tw`w-[95%] mb-4 justify-between flex text-slate-500 md:mt-24 md:w-[58%]`}
+      ${tw`w-[95%] mb-4 justify-between flex text-gray-500 md:mt-24 md:w-[58%]`}
     }
     .location {
-      ${tw`flex text-slate-500`}
+      ${tw`flex text-gray-500 text-xl`}
     }
     .location > h3 {
       ${tw`mr-2`}
     }
+    .location > p {
+      ${tw`text-yellowmmp `}
+    }
     .description {
-      ${tw`text-slate-400 indent-4 text-justify p-4 md:w-[60%]`}
+      ${tw`text-gray-400 indent-4 text-justify p-4 md:w-[60%]`}
     }
   }
 `;

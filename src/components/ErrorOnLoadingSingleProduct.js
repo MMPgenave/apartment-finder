@@ -14,10 +14,10 @@ function ErrorOnLoadingSingleProduct() {
 const Wrapper = styled.div.attrs({})`
   & {
     div {
-      ${tw`min-h-[calc(100vh - 10rem)] flex flex-col justify-center items-center text-3xl text-slate-300`}
+      ${tw`min-h-[calc(100vh - 10rem)] flex flex-col justify-center items-center text-3xl text-gray-300`}
     }
     h3 {
-      ${tw`text-slate-500 text-lg mt-4`}
+      ${tw`text-gray-500 text-lg mt-4`}
     }
   }
 `;

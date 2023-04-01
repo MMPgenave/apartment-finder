@@ -11,7 +11,7 @@ function Loading() {
 const Wrapper = styled.div.attrs({})`
   & {
     section {
-       ${tw`w-full h-screen text-3xl flex justify-center items-center bg-gray-900 text-slate-500`}
+       ${tw`w-full h-screen text-3xl flex justify-center items-center bg-gray-900 text-gray-500`}
     }
   }
 `;

@@ -24,7 +24,7 @@ const Wrapper = styled.div.attrs()`
       ${tw`h-[5rem] justify-start text-lg md:text-xl flex items-center mt-4 pr-16 bg-gray-700 p-4`}
     }
     .homepage {
-      ${tw`text-slate-400 hover:text-slate-300 mr-4 ml-2`}
+      ${tw`text-gray-400 hover:text-gray-300 mr-4 ml-2`}
     }
     p {
       ${tw` mr-4`}
