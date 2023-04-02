@@ -166,7 +166,7 @@ export const Images = [
   {
     id: 2,
     imgUrl:
-    "https://www.khaneanzali.com/wp-content/uploads/2021/09/co-op-building-hs.jpeg",
+      "https://www.khaneanzali.com/wp-content/uploads/2021/09/co-op-building-hs.jpeg",
     price: 5.2,
     type: " ویلایی",
     location: "رشت",
@@ -197,3 +197,15 @@ export const Images = [
 
 export const single_product_url =
   "https://jovial-klepon-acf62c.netlify.app/api/singleProduct?id=";
+export const LabelContent = [
+  { id: 1, label: "موقعیت",labelChildren:[{id:1,text:"تهران"},{id:2,text:"کردستان"}]  },
+  {
+    id: 2,
+    label: "قیمت",
+    labelChildren:[{id:1,text:"کمتر از 2 ملیارد"},{id:2,text:"بیشتر از 2 ملیارد"}]
+   
+  },
+  { id: 3, label: "طبقه بندی شما", 
+  labelChildren:[{id:1,text:"آپارتمان"},{id:2,text:"سویت"}]
+},
+];

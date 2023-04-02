@@ -18,7 +18,7 @@ import {
   REFRESH_PRODUCTS,
   showSearchResult_ON,
   showSearchResult_OFF,
-  SET_searchValueCopy
+  SET_searchValueCopy,
 } from "../actions";
 import { Rooms_List, Images } from "../utils/constants";
 
@@ -120,25 +120,33 @@ export const uiReducer = (state, action) => {
     return { ...state, isErrorOnSingleProductLoading: false };
   }
   if (action.type === SEARCH_PRODUCT) {
+    if (action.payload === "کمتر از 2 ملیارد") {
+      const newProducts = state.productsCopy.filter((item) => item.price < 2);
+      return { ...state, products: newProducts };
+    }
+    if (action.payload === "بیشتر از 2 ملیارد") {
+      const newProducts = state.productsCopy.filter((item) => item.price > 2);
+      return { ...state, products: newProducts };
+    }
     const newProducts = state.productsCopy.filter(
       (item) =>
         item.type.includes(action.payload) ||
-        item.location.includes(action.payload)||item.description.includes(action.payload)
-
+        item.location.includes(action.payload) ||
+        item.description.includes(action.payload)
     );
     return { ...state, products: newProducts };
   }
-  if (action.type===showSearchResult_ON){
-    return {...state,showSearchResult:true}
+  if (action.type === showSearchResult_ON) {
+    return { ...state, showSearchResult: true };
   }
-  if (action.type===showSearchResult_OFF){
-    return {...state,showSearchResult:false}
+  if (action.type === showSearchResult_OFF) {
+    return { ...state, showSearchResult: false };
   }
-  if (action.type===SET_searchValueCopy){
-    return {...state,searchValueCopy:action.payload}
+  if (action.type === SET_searchValueCopy) {
+    return { ...state, searchValueCopy: action.payload };
   }
-  if (action.type===REFRESH_PRODUCTS){
-    return{...state,products:state.productsCopy}
+  if (action.type === REFRESH_PRODUCTS) {
+    return { ...state, products: state.productsCopy };
   }
   throw new Error(`this action (${action.type}) did't include in MMP PROGRAMS`);
 };

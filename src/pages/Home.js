@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { FaAngleDown, FaAngleLeft, FaAngleRight } from "react-icons/fa";
-// import { Rooms_List } from "../utils/constants";
+import { LabelContent } from "../utils/constants";
 import { useUiContext } from "../context/UiContext";
 import {
   Left_Room,
@@ -43,122 +43,38 @@ function Home() {
         </div>
 
         <div className="label">
-          <main className="dropdown">
+          {LabelContent.map(item=>{
+           const {id,label,labelChildren}=item;
+           return  <main key={id} className="dropdown">
             <button className="dropbtn">
-              موقعیت
-              <p>
+              {label}
+            <p>
                 <FaAngleDown />
               </p>
             </button>
-            <main className="dropdown-content">
-              <Link
-                to="/products"
-                onClick={() => {
-                  dispatch({ type: SEARCH_PRODUCT, payload: "تهران" });
-                  dispatch({ type: showSearchResult_ON });
-                  dispatch({ type: SET_searchValueCopy, payload: "تهران" });
-                }}
-              >
-                تهران
-              </Link>
-              <Link
-                to="/products"
-                onClick={() => {
-                  dispatch({ type: SEARCH_PRODUCT, payload: "کردستان" });
-                  dispatch({ type: showSearchResult_ON });
-                  dispatch({ type: SET_searchValueCopy, payload: "کردستان" });
-                }}
-              >
-                کردستان
-              </Link>
-            </main>
+            <main className="dropdown-content" >{labelChildren.map(element=>{
+              const {id,text}=element;
+
+            return  <Link key={id}  to="/products"
+              
+              onClick={() => {
+                dispatch({
+                  type: SEARCH_PRODUCT,
+                  payload: text,
+                });
+                dispatch({ type: showSearchResult_ON });
+                dispatch({
+                  type: SET_searchValueCopy,
+                  payload: text,
+                });
+              }}
+              >{text}</Link>
+            })}</main>
           </main>
-          <main className="dropdown">
-            <button className="dropbtn">
-              متراژ
-              <p>
-                <FaAngleDown />
-              </p>
-            </button>
-            <main className="dropdown-content">
-              <Link
-                to="/products"
-                onClick={() => {
-                  dispatch({
-                    type: SEARCH_PRODUCT,
-                    payload: "کمتر از 150 متر",
-                  });
-                  dispatch({ type: showSearchResult_ON });
-                  dispatch({
-                    type: SET_searchValueCopy,
-                    payload: "کمتر از 150 متر",
-                  });
-                }}
-              >
-                کمتر از 150 متر
-              </Link>
-              <Link
-                to="/products"
-                onClick={() => {
-                  dispatch({
-                    type: SEARCH_PRODUCT,
-                    payload: "بیشتر از 150 متر",
-                  });
-                  dispatch({ type: showSearchResult_ON });
-                  dispatch({
-                    type: SET_searchValueCopy,
-                    payload: "بیشتر از 150 متر",
-                  });
-                }}
-              >
-                بیشتر از 150 متر
-              </Link>
-            </main>
-          </main>
-          <main className="dropdown">
-            <button className="dropbtn">
-              طبقه بندی شما
-              <p>
-                <FaAngleDown />
-              </p>
-            </button>
-            <main className="dropdown-content">
-              <Link
-                to="/products"
-                onClick={() => {
-                  dispatch({
-                    type: SEARCH_PRODUCT,
-                    payload: "خوابه 2",
-                  });
-                  dispatch({ type: showSearchResult_ON });
-                  dispatch({
-                    type: SET_searchValueCopy,
-                    payload: "خوابه 2",
-                  });
-                }}
-              >
-                2 خوابه
-              </Link>
-              <Link
-                to="/products"
-                onClick={() => {
-                  dispatch({
-                    type: SEARCH_PRODUCT,
-                    payload: "سویت",
-                  });
-                  dispatch({ type: showSearchResult_ON });
-                  dispatch({
-                    type: SET_searchValueCopy,
-                    payload: "سویت",
-                  });
-                }}
-              >
-                سویت
-              </Link>
-              {/* <input type="checkbox"></input>
-              <input type="checkbox"></input> */}
-            </main>
-          </main>
+
+          })}
+          
+          
 
           <Link to="/products" className="reserve-btn">
             {" "}
