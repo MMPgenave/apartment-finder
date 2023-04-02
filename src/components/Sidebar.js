@@ -6,6 +6,7 @@ import logo from "../assets/logo.bmp";
 import { Link } from "react-router-dom";
 import { links } from "../utils/constants";
 import { FaTimes } from "react-icons/fa";
+import { AiOutlineLogin } from "react-icons/ai";
 import { TOGGLE_SIDEBAR } from "../actions";
 function Sidebar() {
   const { state, dispatch } = useSidebarContext();
@@ -28,7 +29,7 @@ function Sidebar() {
 
         <div className="Nav-items">
           {links.map((link) => {
-            const { url, id, text,icon } = link;
+            const { url, id, text, icon } = link;
             return (
               <Link
                 to={url}
@@ -38,11 +39,20 @@ function Sidebar() {
               >
                 <h3>{icon}</h3>
                 <p>{text}</p>
-                
               </Link>
             );
           })}
         </div>
+        <Link
+          to="/login"
+          className="login"
+          onClick={() => dispatch({ type: TOGGLE_SIDEBAR })}
+        >
+          <h3>
+            <AiOutlineLogin />
+          </h3>
+          <p>ورود </p>
+        </Link>
         {/* <section className="just-full-hight"></section> */}
       </aside>
     </SidebarContainer>
@@ -69,11 +79,17 @@ const SidebarContainer = styled.div.attrs({})`
     .link {
       ${tw`flex no-underline mr-4 mt-6 text-xl text-gray-500 hover:text-gray-300`}
     }
-    .link>h3{
+    .link > h3 {
       ${tw`ml-3`}
     }
     button {
-      ${tw`text-3xl hover:text-yellow-500 ml-6`}
+      ${tw`text-3xl hover:text-orangemmp ml-6`}
+    }
+    .login {
+      ${tw`text-gray-500 hover:text-gray-300 mr-6 flex mt-48 text-xl`}
+    }
+    .login > h3 {
+      ${tw`ml-3`}
     }
     /* .just-full-hight{
       ${tw`h-96 `}

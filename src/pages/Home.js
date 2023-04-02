@@ -44,8 +44,8 @@ function Home() {
               </p>
             </button>
             <main className="dropdown-content">
-              <a href="#">تهران</a>
-              <a href="#">کردستان</a>
+            <Link  to="/products">تهران</Link>
+            <Link  to="/products">کردستان</Link>
             </main>
           </main>
           <main className="dropdown">
@@ -56,8 +56,8 @@ function Home() {
               </p>
             </button>
             <main className="dropdown-content">
-              <a href="#">کمتر از 150 متر</a>
-              <a href="#">بیشتر از 150 متر</a>
+            <Link  to="/products">کمتر از 150 متر</Link>
+            <Link  to="/products">بیشتر از 150 متر</Link>
             </main>
           </main>
           <main className="dropdown">
@@ -68,14 +68,14 @@ function Home() {
               </p>
             </button>
             <main className="dropdown-content">
-              <a href="#">2 خوابه</a>
-              <a href="#">سویت</a>
-              <input type="checkbox"></input>
-              <input type="checkbox"></input>
+              <Link  to="/products">2 خوابه</Link>
+              <Link  to="/products">سویت</Link>
+              {/* <input type="checkbox"></input>
+              <input type="checkbox"></input> */}
             </main>
           </main>
 
-          <button className="reserve-btn"> الان رزرو کن </button>
+          <Link to="/products" className="reserve-btn"> الان رزرو کن </Link>
         </div>
       </div>
       <div className="bottom-section">
@@ -129,7 +129,7 @@ const HomeContainer = styled.main.attrs({})`
   & {
     .containerrr {
       //flex justify-center items-baseline mx-auto w-screen static
-      ${tw`w-[97%] md:h-[23rem] h-[30rem]  mx-auto relative  `}
+      ${tw`w-[97%] md:w-[80%] md:h-[25rem] h-[30rem]  mx-auto relative md:mt-4  `}
     }
     .main-content {
       //w-full sm:p-4
@@ -137,17 +137,17 @@ const HomeContainer = styled.main.attrs({})`
     }
     .title {
       //w-1/2 h-1/2 flex flex-col
-      ${tw`md:pr-10 md:mt-1 mt-6 mb-2 mr-6  md:pt-10  md:w-2/4 md:justify-between  bg-gray-800  `}
+      ${tw`  md:w-1/2  bg-gray-800 rounded-r-xl `}
     }
     .slider {
       //h-1/2 max-h-60 max-w-[75%]  h-1/2  sm:w-[50%] sm:h-fit lg:max-w-full lg:h-fit
-      ${tw` h-full md:w-3/4 w-full overflow-hidden`}
+      ${tw` h-full md:w-3/4 w-full overflow-hidden rounded-l-lg`}
     }
     h1 {
-      ${tw`md:text-[3rem] text-gray-400 mb-6 text-3xl md:leading-relaxed md:w-[90%] `}
+      ${tw`md:text-[3rem] md:mr-20 md:ml-20 md:mt-10 text-gray-400 mb-6 mt-6 text-3xl md:leading-relaxed md:w-[80%] `}
     }
     .btnss {
-      ${tw` flex justify-start mt-16 md:mr-20 md:ml-16 md:mb-20 md:h-10 w-[90%] md:w-96 h-8 bg-gray-800 `}
+      ${tw` flex justify-start mt-16 md:mr-20 md:ml-16  md:h-10 w-[90%] md:w-96 h-8 bg-gray-800 `}
     }
     .btn-link {
       ${tw` px-4 py-2 pb-3 mr-6 w-36 md:w-48 md:px-5 text-center md:py-2 text-sm  rounded-lg bg-opacity-70  `}
@@ -182,10 +182,10 @@ const HomeContainer = styled.main.attrs({})`
       ${tw`block flex-none hover:text-yellowmmp [text-decoration: none] [text-align: right] lg:text-sm`}
     }
     .reserve-btn {
-      ${tw`bg-orangemmp opacity-70 text-gray-50 hover:bg-gray-100 hover:text-yellowmmp  p-2 rounded-l-lg lg:px-8 lg:text-lg w-auto`}
+      ${tw`bg-orangemmp opacity-70 text-gray-50 hover:bg-gray-100 hover:text-yellowmmp  flex justify-center items-center px-3 text-center rounded-l-lg lg:px-8 lg:text-lg w-auto`}
     }
     .bottom-section {
-      ${tw`w-[95%] h-[28rem] mx-auto mt-24 pt-4  mb-12 bg-transparent `}
+      ${tw`w-[95%] h-[28rem] md:h-[12rem] mx-auto mt-14 pt-4  mb-12 bg-transparent `}
     }
     .top-sec {
       ${tw`flex justify-between mt-3 mb-2`}
@@ -203,7 +203,7 @@ const HomeContainer = styled.main.attrs({})`
       ${tw`bg-gray-500 rounded-lg`}
     }
     .bottom-sec {
-      ${tw`flex justify-between flex-row flex-wrap  mt-2 mr-2`}
+      ${tw`flex justify-between flex-row  flex-wrap  mr-16  mt-2  md:mr-2`}
     }
     .room {
       ${tw` w-80 h-20 text-lg rounded-xl bg-opacity-70  mt-2`}

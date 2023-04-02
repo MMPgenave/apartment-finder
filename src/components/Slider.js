@@ -38,7 +38,7 @@ const SliderContent = styled.section.attrs({})`
   & {
     img {
       // h-1/2 sm:w-[50%] sm:h-fit  lg:max-w-[50%] lg:h-fit w-full h-full
-      ${tw` block brightness-50 [-o-object-fit: cover]  rounded-lg  `}
+      ${tw` block brightness-50 object-top  rounded-l-lg  `}
     }
   }
 `;
