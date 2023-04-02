@@ -4,7 +4,14 @@ import tw from "twin.macro";
 import { FaAngleDown, FaAngleLeft, FaAngleRight } from "react-icons/fa";
 // import { Rooms_List } from "../utils/constants";
 import { useUiContext } from "../context/UiContext";
-import { Left_Room, Right_Room } from "../actions";
+import {
+  Left_Room,
+  Right_Room,
+  SEARCH_PRODUCT,
+  showSearchResult_ON,
+  showSearchResult_OFF,
+  SET_searchValueCopy,
+} from "../actions";
 import Slider from "../components/Slider";
 import { Link } from "react-router-dom";
 import NewsLetter from "../components/NewsLetter";
@@ -44,8 +51,26 @@ function Home() {
               </p>
             </button>
             <main className="dropdown-content">
-            <Link  to="/products">تهران</Link>
-            <Link  to="/products">کردستان</Link>
+              <Link
+                to="/products"
+                onClick={() => {
+                  dispatch({ type: SEARCH_PRODUCT, payload: "تهران" });
+                  dispatch({ type: showSearchResult_ON });
+                  dispatch({ type: SET_searchValueCopy, payload: "تهران" });
+                }}
+              >
+                تهران
+              </Link>
+              <Link
+                to="/products"
+                onClick={() => {
+                  dispatch({ type: SEARCH_PRODUCT, payload: "کردستان" });
+                  dispatch({ type: showSearchResult_ON });
+                  dispatch({ type: SET_searchValueCopy, payload: "کردستان" });
+                }}
+              >
+                کردستان
+              </Link>
             </main>
           </main>
           <main className="dropdown">
@@ -56,8 +81,38 @@ function Home() {
               </p>
             </button>
             <main className="dropdown-content">
-            <Link  to="/products">کمتر از 150 متر</Link>
-            <Link  to="/products">بیشتر از 150 متر</Link>
+              <Link
+                to="/products"
+                onClick={() => {
+                  dispatch({
+                    type: SEARCH_PRODUCT,
+                    payload: "کمتر از 150 متر",
+                  });
+                  dispatch({ type: showSearchResult_ON });
+                  dispatch({
+                    type: SET_searchValueCopy,
+                    payload: "کمتر از 150 متر",
+                  });
+                }}
+              >
+                کمتر از 150 متر
+              </Link>
+              <Link
+                to="/products"
+                onClick={() => {
+                  dispatch({
+                    type: SEARCH_PRODUCT,
+                    payload: "بیشتر از 150 متر",
+                  });
+                  dispatch({ type: showSearchResult_ON });
+                  dispatch({
+                    type: SET_searchValueCopy,
+                    payload: "بیشتر از 150 متر",
+                  });
+                }}
+              >
+                بیشتر از 150 متر
+              </Link>
             </main>
           </main>
           <main className="dropdown">
@@ -68,14 +123,47 @@ function Home() {
               </p>
             </button>
             <main className="dropdown-content">
-              <Link  to="/products">2 خوابه</Link>
-              <Link  to="/products">سویت</Link>
+              <Link
+                to="/products"
+                onClick={() => {
+                  dispatch({
+                    type: SEARCH_PRODUCT,
+                    payload: "خوابه 2",
+                  });
+                  dispatch({ type: showSearchResult_ON });
+                  dispatch({
+                    type: SET_searchValueCopy,
+                    payload: "خوابه 2",
+                  });
+                }}
+              >
+                2 خوابه
+              </Link>
+              <Link
+                to="/products"
+                onClick={() => {
+                  dispatch({
+                    type: SEARCH_PRODUCT,
+                    payload: "سویت",
+                  });
+                  dispatch({ type: showSearchResult_ON });
+                  dispatch({
+                    type: SET_searchValueCopy,
+                    payload: "سویت",
+                  });
+                }}
+              >
+                سویت
+              </Link>
               {/* <input type="checkbox"></input>
               <input type="checkbox"></input> */}
             </main>
           </main>
 
-          <Link to="/products" className="reserve-btn"> الان رزرو کن </Link>
+          <Link to="/products" className="reserve-btn">
+            {" "}
+            الان رزرو کن{" "}
+          </Link>
         </div>
       </div>
       <div className="bottom-section">

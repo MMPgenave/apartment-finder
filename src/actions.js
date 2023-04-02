@@ -20,4 +20,7 @@ export const HAVE_ERROR_ON_SINGLE_PRODUCT_LOADING =
 export const HAVE_NOT_ERROR_ON_SINGLE_PRODUCT_LOADING =
   "HAVE_NOT_ERROR_ON_SINGLE_PRODUCT_LOADING";
 export const SEARCH_PRODUCT = "SEARCH_PRODUCT";
-export const REFRESH_PRODUCTS="REFRESH_PRODUCTS"
+export const REFRESH_PRODUCTS="REFRESH_PRODUCTS";
+export const showSearchResult_ON="showSearchResult_ON";
+export const showSearchResult_OFF="showSearchResult_OFF";
+export const SET_searchValueCopy="SET_searchValueCopy";

@@ -26,6 +26,8 @@ const initial_state = {
   singleProductLoading: false,
   singleProduct: {},
   isErrorOnSingleProductLoading: false,
+  showSearchResult:false,
+  searchValueCopy:"",
 };
 export const UiContext = ({ children }) => {
   // get the data from url

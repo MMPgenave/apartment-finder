@@ -4,17 +4,21 @@ import tw from "twin.macro";
 import { FaSearch } from "react-icons/fa";
 import { GrRefresh } from "react-icons/gr";
 import { useUiContext } from "../context/UiContext";
-import { SEARCH_PRODUCT, REFRESH_PRODUCTS } from "../actions";
+import { SEARCH_PRODUCT, REFRESH_PRODUCTS,showSearchResult_ON,
+  showSearchResult_OFF,
+  SET_searchValueCopy } from "../actions";
 const Filter = ({ numberOfFilteredItem }) => {
-  const [flag, setFlag] = useState(false);
+  // const [flag, setFlag] = useState(false);
   const { state, dispatch } = useUiContext();
   const inputRef = useRef(null);
-  const [inputValueCopy, setInputValuCopy] = useState("");
+  // const [inputValueCopy, setInputValuCopy] = useState("");
   const submitHandler = (e) => {
     e.preventDefault();
-    setFlag(true);
+    // setFlag(true);
+    dispatch({type:showSearchResult_ON})
     dispatch({ type: SEARCH_PRODUCT, payload: inputRef.current.value });
-    setInputValuCopy(inputRef.current.value);
+    // setInputValuCopy(inputRef.current.value);
+    dispatch({type:SET_searchValueCopy,payload:inputRef.current.value})
     inputRef.current.value = "";
   };
   return (
@@ -35,19 +39,21 @@ const Filter = ({ numberOfFilteredItem }) => {
         <GrRefresh
           className="refresh"
           onClick={() => {
-            setFlag(false);
+            // setFlag(false);
+            dispatch({type:showSearchResult_OFF})
+
             dispatch({ type: REFRESH_PRODUCTS });
           }}
         ></GrRefresh>
         </div>
        
       </div>
-      {flag &&
-        (numberOfFilteredItem ? (
+      { state.showSearchResult&&
+        (state.products.length ? (
           <div className="searchResult">
-            <p>{numberOfFilteredItem}</p>
+            <p>{state.products.length}</p>
             <p>مورد برای </p>
-            <p>{inputValueCopy}</p>
+            <p>{state.searchValueCopy}</p>
             <p>یافت شد.</p>
           </div>
         ) : (
