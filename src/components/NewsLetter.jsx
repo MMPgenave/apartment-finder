@@ -18,7 +18,8 @@ function NewsLetter() {
             و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
           </p>
         </div>
-        <form action="https://formspree.io/f/xnqyzyje" method="POST">
+        {/* //action="https://formspree.io/f/xnqyzyje" method="POST" */}
+        <form>
           <input
             type="email"
             required
