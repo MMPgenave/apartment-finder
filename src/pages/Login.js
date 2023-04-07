@@ -69,16 +69,16 @@ const Wrapper = styled.div.attrs()`
       ${tw`border-gray-100 border-t-transparent border-l-transparent border-r-transparent outline-transparent ring-0`}
     }
     form > button {
-      ${tw`mt-12 bg-yellowmmp rounded-lg py-2 text-2xl `}
+      ${tw`mt-12 bg-yellowmmp rounded-lg py-2 text-2xl hover:bg-gray-300 hover:text-yellowmmp `}
     }
     form:focus {
       ${tw`outline-transparent ring-0`}
     }
     section {
-      ${tw`w-full mt-16 mb-10  flex flex-col items-center`}
+      ${tw`w-full mt-16 mb-4  flex flex-col items-center`}
     }
     section > p {
-      ${tw`text-gray-400 mb-4`}
+      ${tw`text-gray-400 mb-2`}
     }
     section > div {
       ${tw`flex my-4 w-1/3 justify-between text-3xl text-gray-400 `}
