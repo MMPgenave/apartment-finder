@@ -4,9 +4,13 @@ import tw from "twin.macro";
 import { FaSearch } from "react-icons/fa";
 import { GrRefresh } from "react-icons/gr";
 import { useUiContext } from "../context/UiContext";
-import { SEARCH_PRODUCT, REFRESH_PRODUCTS,showSearchResult_ON,
+import {
+  SEARCH_PRODUCT,
+  REFRESH_PRODUCTS,
+  showSearchResult_ON,
   showSearchResult_OFF,
-  SET_searchValueCopy } from "../actions";
+  SET_searchValueCopy,
+} from "../actions";
 const Filter = ({ numberOfFilteredItem }) => {
   // const [flag, setFlag] = useState(false);
   const { state, dispatch } = useUiContext();
@@ -15,10 +19,10 @@ const Filter = ({ numberOfFilteredItem }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     // setFlag(true);
-    dispatch({type:showSearchResult_ON})
+    dispatch({ type: showSearchResult_ON });
     dispatch({ type: SEARCH_PRODUCT, payload: inputRef.current.value });
     // setInputValuCopy(inputRef.current.value);
-    dispatch({type:SET_searchValueCopy,payload:inputRef.current.value})
+    dispatch({ type: SET_searchValueCopy, payload: inputRef.current.value });
     inputRef.current.value = "";
   };
   return (
@@ -36,19 +40,18 @@ const Filter = ({ numberOfFilteredItem }) => {
           />
         </form>
         <div>
-        <GrRefresh
-          className="refresh"
-          onClick={() => {
-            // setFlag(false);
-            dispatch({type:showSearchResult_OFF})
+          <GrRefresh
+            className="refresh"
+            onClick={() => {
+              // setFlag(false);
+              dispatch({ type: showSearchResult_OFF });
 
-            dispatch({ type: REFRESH_PRODUCTS });
-          }}
-        ></GrRefresh>
+              dispatch({ type: REFRESH_PRODUCTS });
+            }}
+          ></GrRefresh>
         </div>
-       
       </div>
-      { state.showSearchResult&&
+      {state.showSearchResult &&
         (state.products.length ? (
           <div className="searchResult">
             <p>{state.products.length}</p>
@@ -64,20 +67,21 @@ const Filter = ({ numberOfFilteredItem }) => {
 };
 const Wrapper = styled.div.attrs({})`
   & {
-    form {//mt-4 mx-auto md:mr-4
+    form {
+      //mt-4 mx-auto md:mr-4
       ${tw`w-80  px-4 flex items-center rounded-r-md bg-gray-400 text-gray-700 text-xl`}
     }
     input[type="search"] {
-      ${tw`bg-transparent border-0 w-80  border-transparent`}
+      ${tw`bg-transparent border-0 w-80 text-xl  border-transparent`}
     }
     input[type="search"]:focus {
-      ${tw`outline-none`}
+      ${tw`outline-none ring-0`}
     }
-    .searchANDrefresh{
+    .searchANDrefresh {
       ${tw`  flex  justify-center items-center mt-4`}
     }
     .refresh {
-      ${tw`text-3xl rounded-l-md h-10 hover:cursor-pointer pl-2 text-gray-700 bg-gray-400`}
+      ${tw`text-3xl rounded-l-md h-11 hover:cursor-pointer pl-2 text-gray-700 bg-gray-400`}
     }
     .searchResult {
       ${tw`flex max-h-screen items-center  text-xl mt-4 mr-6 tracking-wider`}
