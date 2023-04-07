@@ -21,7 +21,7 @@ function SpeceficPageHero({ to }) {
 const Wrapper = styled.div.attrs()`
   & {
     section {
-      ${tw`h-[5rem] justify-start text-lg md:text-xl flex items-center mt-4 pr-16 bg-gray-700 p-4`}
+      ${tw`h-[5rem] justify-start text-xs md:text-xl flex items-center mt-4 md:pr-16 pr-4 bg-gray-700 p-4`}
     }
     .homepage {
       ${tw`text-gray-400 hover:text-gray-300 mr-4 ml-2`}

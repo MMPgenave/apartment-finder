@@ -17,7 +17,7 @@ const Wrapper = styled.div.attrs({})`
       ${tw`min-h-[calc(100vh - 0rem)] flex flex-col justify-center items-center text-3xl text-gray-300 bg-gray-800`}
     }
     h3 {
-      ${tw`text-gray-500 text-lg mt-4 bg-gray-800`}
+      ${tw`text-gray-500 text-sm mt-4 bg-gray-800`}
     }
   }
 `;

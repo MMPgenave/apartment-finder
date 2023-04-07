@@ -87,13 +87,13 @@ const Wrapper = styled.div.attrs({})`
       ${tw`flex max-h-screen items-center  text-xl mt-4 mr-6 tracking-wider`}
     }
     .searchResult > p:nth-of-type(1) {
-      ${tw`ml-2 text-2xl text-yellow-500`}
+      ${tw`ml-2 md:text-2xl text-sm text-yellow-500`}
     }
     .searchResult > p:nth-of-type(3) {
-      ${tw`ml-1 mr-1 text-3xl text-gray-300 tracking-widest`}
+      ${tw`ml-1 mr-1 md:text-3xl text-sm text-gray-300 tracking-widest`}
     }
     .noResult {
-      ${tw`mx-auto text-2xl w-48 min-h-screen mt-4 tracking-widest text-red-300 `}
+      ${tw`mx-auto md:text-2xl text-sm w-48 min-h-screen mt-4 tracking-widest text-red-300 `}
     }
   }
 `;

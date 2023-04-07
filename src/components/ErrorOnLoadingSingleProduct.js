@@ -14,7 +14,7 @@ function ErrorOnLoadingSingleProduct() {
 const Wrapper = styled.div.attrs({})`
   & {
     div {
-      ${tw`min-h-[calc(100vh - 10rem)] flex flex-col justify-center items-center text-3xl text-gray-300`}
+      ${tw`min-h-[calc(100vh - 10rem)] flex flex-col justify-center items-center text-sm  md:text-3xl text-gray-300`}
     }
     h3 {
       ${tw`text-gray-500 text-lg mt-4`}

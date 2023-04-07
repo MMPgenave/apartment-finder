@@ -7,7 +7,6 @@ function PageHero({ to }) {
     <Wrapper>
       <section>
         <Link to="/" className="homepage">
-        
           صفحه اصلی
         </Link>
         / {to}
@@ -18,10 +17,10 @@ function PageHero({ to }) {
 const Wrapper = styled.div.attrs()`
   & {
     section {
-      ${tw`h-[5rem] justify-start text-3xl flex items-center mt-4  bg-gray-700 p-4`}
+      ${tw`h-[5rem] justify-start text-lg md:text-3xl flex items-center mt-4  bg-gray-700 p-4`}
     }
     .homepage {
-      ${tw`text-gray-400 mr-16 `}
+      ${tw`text-gray-400 ml-2 mr-4 md:mr-16 `}
     }
   }
 `;
