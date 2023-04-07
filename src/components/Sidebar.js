@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useSidebarContext } from "../context/SidebarContext";
 import styled from "styled-components";
 import tw from "twin.macro";
-import logo from "../assets/logo.bmp";
+import {arme_url} from "../utils/constants";
 import { Link } from "react-router-dom";
 import { links } from "../utils/constants";
 import { FaTimes } from "react-icons/fa";
@@ -18,7 +18,7 @@ function Sidebar() {
         }`}
       >
         <div className="header">
-          <img src={logo} alt="logo" />
+          <img src={arme_url} alt="logo" />
           <button
             type="button"
             onClick={() => dispatch({ type: TOGGLE_SIDEBAR })}

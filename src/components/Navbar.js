@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/logo.bmp";
+import {arme_url} from "../utils/constants";
 import { Link } from "react-router-dom";
 import { links } from "../utils/constants";
 import { FaBars } from "react-icons/fa";
@@ -15,7 +15,7 @@ function Navbar() {
       <div className="main">
         <div className="nav-header">
           <Link to="/">
-            <img src={logo} alt="logo" />
+            <img src={arme_url} alt="logo" />
           </Link>
           <button
             className="fabars-button"
@@ -50,10 +50,10 @@ const StyledNavbar = styled.main.attrs({
 })`
   & {
     .main {
-      ${tw`h-20 w-[80%] flex items-center justify-between  text-sm mx-auto `}
+      ${tw`h-20 w-[78%] flex  items-center justify-between  text-sm mx-auto `}
     }
-    img {
-      ${tw`w-24 h-24  p-4 border-0 rounded-3xl ml-20 mr-12 `}
+    img {//ml-20 mr-12 
+      ${tw`w-20 h-20  p-4 border-0 rounded-3xl md:ml-20 md:mr-6 `}
     }
 
     .Nav-items {
@@ -64,7 +64,7 @@ const StyledNavbar = styled.main.attrs({
       ${tw`no-underline mr-4 text-gray-500 hover:text-gray-300`}
     }
     .login {
-      ${tw`text-gray-400 py-2 px-6 border-0 rounded-xl text-sm  bg-gray-800 ml-12 hidden hover:text-gray-100 lg:block`}
+      ${tw`text-gray-400 tracking-widest text-sm  ml-12 hidden hover:text-gray-100 lg:block`}
     }
     .fabars-button {
       ${tw`text-yellowmmp bg-transparent text-xl block  lg:hidden ml-4 hover:text-2xl`}

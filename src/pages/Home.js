@@ -43,38 +43,44 @@ function Home() {
         </div>
 
         <div className="label">
-          {LabelContent.map(item=>{
-           const {id,label,labelChildren}=item;
-           return  <main key={id} className="dropdown">
-            <button className="dropbtn">
-              {label}
-            <p>
-                <FaAngleDown />
-              </p>
-            </button>
-            <main className="dropdown-content" >{labelChildren.map(element=>{
-              const {id,text}=element;
+          {LabelContent.map((item) => {
+            const { id, label, labelChildren } = item;
+            return (
+              <main key={id} className="dropdown">
+                <button className="dropbtn">
+                  {label}
+                  <p>
+                    <FaAngleDown />
+                  </p>
+                </button>
+                <main className="dropdown-content">
+                  {labelChildren.map((element) => {
+                    const { id, text } = element;
 
-            return  <Link key={id}  to="/products"
-              
-              onClick={() => {
-                dispatch({
-                  type: SEARCH_PRODUCT,
-                  payload: text,
-                });
-                dispatch({ type: showSearchResult_ON });
-                dispatch({
-                  type: SET_searchValueCopy,
-                  payload: text,
-                });
-              }}
-              >{text}</Link>
-            })}</main>
-          </main>
-
+                    return (
+                      <Link
+                        key={id}
+                        to="/products"
+                        onClick={() => {
+                          dispatch({
+                            type: SEARCH_PRODUCT,
+                            payload: text,
+                          });
+                          dispatch({ type: showSearchResult_ON });
+                          dispatch({
+                            type: SET_searchValueCopy,
+                            payload: text,
+                          });
+                        }}
+                      >
+                        {text}
+                      </Link>
+                    );
+                  })}
+                </main>
+              </main>
+            );
           })}
-          
-          
 
           <Link to="/products" className="reserve-btn">
             {" "}
@@ -145,10 +151,10 @@ const HomeContainer = styled.main.attrs({})`
     }
     .slider {
       //h-1/2 max-h-60 max-w-[75%]  h-1/2  sm:w-[50%] sm:h-fit lg:max-w-full lg:h-fit
-      ${tw` h-full md:w-3/4 w-full overflow-hidden rounded-l-lg`}
+      ${tw` h-full md:w-3/4 w-full overflow-hidden rounded-lg`}
     }
     h1 {
-      ${tw`md:text-[3rem] md:mr-20 md:ml-20 md:mt-10 text-gray-400 mb-6 mt-6 text-3xl md:leading-relaxed md:w-[80%] `}
+      ${tw`md:text-[3rem] md:mr-20 md:ml-20 md:mt-10 text-gray-50 mb-6 mt-6 text-3xl md:leading-relaxed md:w-[80%] `}
     }
     .btnss {
       ${tw` flex justify-start mt-16 md:mr-20 md:ml-16  md:h-10 w-[90%] md:w-96 h-8 bg-gray-800 `}
@@ -163,7 +169,7 @@ const HomeContainer = styled.main.attrs({})`
       ${tw`bg-gray-200 text-gray-900 hover:bg-gray-700 hover:text-gray-200`}
     }
     .label {
-      ${tw`flex flex-row justify-between w-[89%] h-[6rem] mx-auto  rounded-lg absolute top-[94%] left-[6%]  bg-gray-700 bg-opacity-70`}
+      ${tw`flex flex-row justify-between w-[89%] h-[6rem] mx-auto  rounded-lg absolute top-[91%] left-[6%]  bg-gray-700 bg-opacity-70`}
     }
 
     .dropdown {
@@ -180,22 +186,22 @@ const HomeContainer = styled.main.attrs({})`
       ${tw`hidden absolute z-10`}
     }
     .dropdown:hover .dropdown-content {
-      ${tw` flex flex-col justify-center`}
+      ${tw` flex flex-col justify-center mt-2`}
     }
     .dropdown-content a {
-      ${tw`block flex-none hover:text-yellowmmp [text-decoration: none] [text-align: right] lg:text-sm`}
+      ${tw`block flex-none mb-1 hover:text-yellowmmp [text-decoration: none] [text-align: right] lg:text-sm`}
     }
     .reserve-btn {
       ${tw`bg-orangemmp opacity-70 text-gray-50 hover:bg-gray-100 hover:text-yellowmmp  flex justify-center items-center px-3 text-center rounded-l-lg lg:px-8 lg:text-lg w-auto`}
     }
     .bottom-section {
-      ${tw`w-[95%] h-[28rem] md:h-[12rem] mx-auto mt-14 pt-4  mb-12 bg-transparent `}
+      ${tw`w-[95%] h-[28rem]  md:h-[12rem] mx-auto mt-14 pt-4  mb-12 bg-transparent `}
     }
     .top-sec {
       ${tw`flex justify-between mt-3 mb-2`}
     }
     .top-sec > h2 {
-      ${tw` text-gray-400 text-3xl lg:mr-2 tracking-wider `}
+      ${tw` text-gray-50 text-3xl lg:mr-2 tracking-wider `}
     }
     .icons {
       ${tw`ml-2 flex flex-col sm:flex-row items-center text-3xl justify-between sm:w-16`}
@@ -207,7 +213,7 @@ const HomeContainer = styled.main.attrs({})`
       ${tw`bg-gray-500 rounded-lg`}
     }
     .bottom-sec {
-      ${tw`flex justify-between flex-row  flex-wrap  mr-16  mt-2  md:mr-2`}
+      ${tw`flex justify-between  mx-auto flex-row  flex-wrap  w-[99%]  mt-2  md:mr-2`}
     }
     .room {
       ${tw` w-80 h-20 text-lg rounded-xl bg-opacity-70  mt-2`}

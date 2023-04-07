@@ -198,14 +198,30 @@ export const Images = [
 export const single_product_url =
   "https://jovial-klepon-acf62c.netlify.app/api/singleProduct?id=";
 export const LabelContent = [
-  { id: 1, label: "موقعیت",labelChildren:[{id:1,text:"تهران"},{id:2,text:"کردستان"}]  },
+  {
+    id: 1,
+    label: "موقعیت",
+    labelChildren: [
+      { id: 1, text: "تهران" },
+      { id: 2, text: "کردستان" },
+    ],
+  },
   {
     id: 2,
     label: "قیمت",
-    labelChildren:[{id:1,text:"کمتر از 2 ملیارد"},{id:2,text:"بیشتر از 2 ملیارد"}]
-   
+    labelChildren: [
+      { id: 1, text: "کمتر از 2 ملیارد" },
+      { id: 2, text: "بیشتر از 2 ملیارد" },
+    ],
   },
-  { id: 3, label: "طبقه بندی شما", 
-  labelChildren:[{id:1,text:"آپارتمان"},{id:2,text:"سویت"}]
-},
+  {
+    id: 3,
+    label: "طبقه بندی شما",
+    labelChildren: [
+      { id: 1, text: "آپارتمان" },
+      { id: 2, text: "سویت" },
+    ],
+  },
 ];
+export const arme_url =
+  "https://myhomefinder-hr.com/wp-content/uploads/2022/10/Color-logo-no-background-1.png";
