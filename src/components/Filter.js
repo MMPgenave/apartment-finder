@@ -69,7 +69,7 @@ const Wrapper = styled.div.attrs({})`
   & {
     form {
       //mt-4 mx-auto md:mr-4
-      ${tw`w-80  px-4 flex items-center rounded-r-md bg-gray-400 text-gray-700 text-xl`}
+      ${tw`md:w-80 w-[80%]  px-4 flex items-center rounded-r-md bg-gray-400 text-gray-700 text-xl`}
     }
     input[type="search"] {
       ${tw`bg-transparent border-0 w-80 text-xl  border-transparent`}
