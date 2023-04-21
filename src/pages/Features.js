@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import PageHero from "../components/PageHero";
+import TestUseMemo from "../testReactFeature/testUseMemo";
 function Features() {
   return (
     <Wrapper>
       {/* <PageHero to="ویژگی ها" /> */}
-      <section> Feactures</section>
+      <TestUseMemo />
     </Wrapper>
   );
 }
