@@ -3,9 +3,9 @@ import PageHero from "./PageHero";
 function UpdatedPageHero(OriginalPageHero) {
   function NewComponent({ to }) {
     return (
-      <div className="h-18">
+      <div>
         <OriginalPageHero to={to} />
-        <div className="w-48 mx-auto h-2 bg-orangemmp border">ff f</div>
+        <div className=" border border-x-green-700 "></div>
       </div>
     );
   }
