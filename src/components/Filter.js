@@ -36,7 +36,7 @@ const Filter = ({ numberOfFilteredItem }) => {
             required
             ref={inputRef}
             type="search"
-            placeholder={`  جستجو در محصولات     `}
+            placeholder={`  جستجو در املاک     `}
           />
         </form>
         <div>
@@ -90,7 +90,7 @@ const Wrapper = styled.div.attrs({})`
       ${tw`ml-2 md:text-2xl text-sm text-yellow-500`}
     }
     .searchResult > p:nth-of-type(3) {
-      ${tw`ml-1 mr-1 md:text-3xl text-sm text-gray-300 tracking-widest`}
+      ${tw`ml-1 mr-1 md:text-xl text-sm text-gray-300 text-yellowmmp`}
     }
     .noResult {
       ${tw`mx-auto md:text-2xl text-sm w-48 min-h-screen mt-4 tracking-widest text-red-300 `}

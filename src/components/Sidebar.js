@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import { useSidebarContext } from "../context/SidebarContext";
 import styled from "styled-components";
 import tw from "twin.macro";
-import {arme_url} from "../utils/constants";
+import { arme_url } from "../utils/constants";
 import { Link } from "react-router-dom";
 import { links } from "../utils/constants";
-import { FaTimes } from "react-icons/fa";
+import { FaTimes,FaBars } from "react-icons/fa";
 import { AiOutlineLogin } from "react-icons/ai";
 import { TOGGLE_SIDEBAR } from "../actions";
 function Sidebar() {
@@ -23,7 +23,7 @@ function Sidebar() {
             type="button"
             onClick={() => dispatch({ type: TOGGLE_SIDEBAR })}
           >
-            <FaTimes />
+            <FaBars />
           </button>
         </div>
 
@@ -61,17 +61,18 @@ function Sidebar() {
 const SidebarContainer = styled.div.attrs({})`
   & {
     .sidebar {
-      ${tw` fixed top-0 right-0 w-[100%] min-h-[calc(100vh-0rem)] transform translate-x-full transition-all lg:hidden  bg-gray-800 -z-[1] `}
+      //-z-[1]
+      ${tw` fixed top-0 right-0 w-[60%] min-h-[calc(100vh-0rem)] transform translate-x-full transition-all lg:hidden  bg-gray-800  `}
     }
     .show-sidebar {
-      //hidden
-      ${tw` transform translate-x-0 z-[999] `}
+      //hidden z-[999]
+      ${tw` transform translate-x-0  z-10`}
     }
     .header {
       ${tw`flex justify-between bg-gray-800  items-center`}
     }
     img {
-      ${tw`w-24 h-24  p-4 border-0 rounded-3xl  mr-10 `}
+      ${tw`w-20 h-20  p-4 border-0 rounded-3xl  mr-5 `}
     }
     .Nav-items {
       ${tw`h-24  flex flex-col justify-between  bg-gray-800 mr-2 mt-4    `}
@@ -83,10 +84,10 @@ const SidebarContainer = styled.div.attrs({})`
       ${tw`ml-3`}
     }
     button {
-      ${tw`text-3xl hover:text-orangemmp ml-6`}
+      ${tw`text-2xl text-yellowmmp hover:text-3xl ml-6`}
     }
     .login {
-      ${tw`text-gray-500 hover:text-gray-300 mr-6 flex mt-48 text-xl`}
+      ${tw`text-gray-500 hover:text-gray-300 mr-6 flex items-center mt-48 text-xl`}
     }
     .login > h3 {
       ${tw`ml-3`}

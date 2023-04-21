@@ -4,6 +4,7 @@ import tw from "twin.macro";
 import { FaAngleDown, FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { LabelContent } from "../utils/constants";
 import { useUiContext } from "../context/UiContext";
+import { useSidebarContext } from "../context/SidebarContext";
 import {
   Left_Room,
   Right_Room,
@@ -11,15 +12,24 @@ import {
   showSearchResult_ON,
   showSearchResult_OFF,
   SET_searchValueCopy,
+  TOGGLE_SIDEBAR,
 } from "../actions";
 import Slider from "../components/Slider";
 import { Link } from "react-router-dom";
 import NewsLetter from "../components/NewsLetter";
 function Home() {
   const { state, dispatch } = useUiContext();
-
+  const { state: STATE, dispatch: DISPATCH } = useSidebarContext();
+  // const dispatch_from_sidebarContext=value.dispatch;
   return (
-    <HomeContainer>
+    <HomeContainer
+      onClick={() => {
+        if (STATE.isSidebarOpen) {
+          DISPATCH({ type: TOGGLE_SIDEBAR });
+        }
+      }}
+      className={STATE.isSidebarOpen && "opacity-50"}
+    >
       <div className="containerrr">
         <div className="main-content">
           <div className="title">

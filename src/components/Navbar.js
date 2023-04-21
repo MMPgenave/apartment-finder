@@ -1,5 +1,5 @@
 import React from "react";
-import {arme_url} from "../utils/constants";
+import { arme_url } from "../utils/constants";
 import { Link } from "react-router-dom";
 import { links } from "../utils/constants";
 import { FaBars } from "react-icons/fa";
@@ -11,17 +11,26 @@ import { useSidebarContext } from "../context/SidebarContext";
 function Navbar() {
   const { state, dispatch } = useSidebarContext();
   return (
-    <StyledNavbar>
+    <StyledNavbar
+      onClick={() => {
+        if (state.isSidebarOpen) {
+          dispatch({ type: TOGGLE_SIDEBAR });
+        }
+      }}
+      className={state.isSidebarOpen && "opacity-50"}
+    >
       <div className="main">
         <div className="nav-header">
           <Link to="/">
             <img src={arme_url} alt="logo" />
           </Link>
           <button
-            className="fabars-button"
+            className= "fabars-button "
             onClick={() => dispatch({ type: TOGGLE_SIDEBAR })}
           >
-            <FaBars />
+            <FaBars className={
+              state.isSidebarOpen && "hidden"
+            }  />
           </button>
         </div>
 
@@ -52,7 +61,8 @@ const StyledNavbar = styled.main.attrs({
     .main {
       ${tw`h-20 w-[78%] flex  items-center justify-between  text-sm mx-auto `}
     }
-    img {//ml-20 mr-12 
+    img {
+      //ml-20 mr-12
       ${tw`w-20 h-20  p-4 border-0 rounded-3xl md:ml-20 md:mr-6 `}
     }
 

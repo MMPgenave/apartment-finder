@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import PageHero from "../components/PageHero";
+import EnhancedPageHero from "../components/withPageHero";
+// const EnhancedPageHero = Wrapper(WrappedPageHero);
 function FAQ() {
   return (
     <Wrapper>
-      {/* <PageHero to=" سوالات متداول " /> */}
-
+      <EnhancedPageHero to="faq" />
       <section> FAQ</section>
     </Wrapper>
   );
@@ -14,7 +14,7 @@ function FAQ() {
 const Wrapper = styled.div.attrs()`
   & {
     section {
-      ${tw`min-h-[calc(100vh - 10rem)] flex justify-center items-center text-3xl`}
+      ${tw` flex justify-center items-center text-3xl`}
     }
   }
 `;
