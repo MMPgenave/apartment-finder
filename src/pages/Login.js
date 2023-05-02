@@ -1,12 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { AiOutlineLogin, AiOutlineTwitter } from "react-icons/ai";
 import { GrGoogle, GrFacebookOption } from "react-icons/gr";
 
 function Login() {
+  const nn = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
+  };
+  const signUpHandler = () => {
+    nn("/");
   };
   return (
     <Wrapper>
@@ -22,6 +27,11 @@ function Login() {
             <input required type="password" placeholder="رمزتو بنویس" />
             <button type="submit">ورود</button>
           </form>
+          <div>
+            <button onClick={signUpHandler} className="signUp">
+              هنوز ثبت نام نکردی؟
+            </button>
+          </div>
           <section>
             <p>و یا با روش های زیر وارد شو</p>
             <div>
@@ -73,6 +83,9 @@ const Wrapper = styled.div.attrs()`
     }
     form:focus {
       ${tw`outline-transparent ring-0`}
+    }
+    .signUp {
+      ${tw`text-red-600`}
     }
     section {
       ${tw`w-full mt-16 mb-4  flex flex-col items-center`}

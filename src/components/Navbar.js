@@ -25,12 +25,10 @@ function Navbar() {
             <img src={arme_url} alt="logo" />
           </Link>
           <button
-            className= "fabars-button "
+            className="fabars-button "
             onClick={() => dispatch({ type: TOGGLE_SIDEBAR })}
           >
-            <FaBars className={
-              state.isSidebarOpen && "hidden"
-            }  />
+            <FaBars className={state.isSidebarOpen && "hidden"} />
           </button>
         </div>
 
@@ -47,6 +45,9 @@ function Navbar() {
 
         <Link to="/login" className="login">
           ورود
+        </Link>
+        <Link to="/signup" className="login">
+          ثبت نام
         </Link>
       </div>
     </StyledNavbar>

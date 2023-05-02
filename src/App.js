@@ -12,7 +12,8 @@ import {
   Home,
   SingleProduct,
   Products,
-  Login
+  Login,
+  SignUp,
 } from "./pages";
 import { useUiContext } from "./context/UiContext";
 import Loading from "./components/Loading";
@@ -41,6 +42,7 @@ function App() {
               <Route path="*" element={<Error />} />
               <Route path="login" element={<Login />} />
               <Route path="product/:id" element={<SingleProduct />} />
+              <Route path="signup" element={<SignUp />} />
             </Routes>
 
             <Footer />

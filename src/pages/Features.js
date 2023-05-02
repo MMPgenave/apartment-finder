@@ -3,11 +3,12 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import PageHero from "../components/PageHero";
 import TestUseMemo from "../testReactFeature/testUseMemo";
+import Testusecallback from "../testReactFeature/testuseCallback";
+import TestUpdateStateDirectly from "../testReactFeature/testUpdateStateDirectly";
 function Features() {
   return (
     <Wrapper>
-      {/* <PageHero to="ویژگی ها" /> */}
-      <TestUseMemo />
+      <TestUpdateStateDirectly />
     </Wrapper>
   );
 }

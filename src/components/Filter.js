@@ -69,7 +69,7 @@ const Wrapper = styled.div.attrs({})`
   & {
     form {
       //mt-4 mx-auto md:mr-4
-      ${tw`md:w-80 w-[80%]  px-4 flex items-center rounded-r-md bg-gray-400 text-gray-700 text-xl`}
+      ${tw`md:w-80 w-[80%]  px-4 flex items-center rounded-md bg-gray-400 text-gray-700 text-xl`}
     }
     input[type="search"] {
       ${tw`bg-transparent border-0 w-80 text-xl  border-transparent`}
@@ -81,7 +81,7 @@ const Wrapper = styled.div.attrs({})`
       ${tw`  flex  justify-center items-center mt-4`}
     }
     .refresh {
-      ${tw`text-3xl rounded-l-md h-11 hover:cursor-pointer pl-2 text-gray-700 bg-gray-400`}
+      ${tw`text-3xl h-11 hover:cursor-pointer  pl-2 text-gray-700 `}
     }
     .searchResult {
       ${tw`flex max-h-screen items-center  text-xl mt-4 mr-6 tracking-wider`}

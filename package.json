@@ -7,6 +7,7 @@
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.15",
+    "@supabase/supabase-js": "^2.21.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -50,10 +51,10 @@
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "babel-plugin-macros": "^3.1.0",
+    "netlify-cli": "^12.1.0",
     "postcss-cli": "^10.1.0",
     "tailwind.macro": "^0.5.10",
     "tailwindcss": "^3.2.7",
-    "twin.macro": "^3.1.0",
-    "netlify-cli": "^12.1.0"
+    "twin.macro": "^3.1.0"
   }
 }
